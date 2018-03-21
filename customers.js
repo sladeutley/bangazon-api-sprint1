@@ -26,7 +26,7 @@ module.exports.generateCustomers = () => {
       addressCity,
       addressState,
       addressZip
-    })
+    });
   }
   return customers;
-}
+};
