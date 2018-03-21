@@ -20,3 +20,17 @@ module.exports.getOne = (custId) => {
             });
     });
 };
+
+module.exports.addNewCustomer = () => {
+    const { list } = require("../data/faker/customers.json");
+    return new Promise((resolve, reject) => {
+      list.forEach(({ first_name, last_name, user_name, phone, email, addressStreet, addressCity, addressState, addressZip }) => {
+        db.run(
+          `INSERT INTO customers
+          VALUES ("${first_name}", "${last_name}", "${user_name}", ${phone}, "${email}", "${addressStreet}", "${addressCity}", "${addressState}", ${addressZip})`
+        );
+      });
+      resolve();
+    })
+  
+  };

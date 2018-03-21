@@ -7,3 +7,6 @@ custRouter.get("/customers", getAllCustomers);
 custRouter.get('/customers/:custId', getOneCustomer);
 
 module.exports = custRouter;
+
+
+
