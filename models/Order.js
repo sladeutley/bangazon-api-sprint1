@@ -4,7 +4,7 @@ const db = new sqlite3.Database('./db/bangazon.sqlite');
 
 module.exports.getAll = () => {
   return new Promise( (resolve, reject) => {
-    db.all(`SELECT * FROM products`,
+    db.all(`SELECT * FROM orders`,
     (err, orders) => {
       if (err) return reject(err);
       resolve(orders);

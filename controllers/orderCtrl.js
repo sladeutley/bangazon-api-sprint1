@@ -11,3 +11,8 @@ module.exports.getAllOrders = (req, res, next) => {
     next(err);
   });
 };
+
+module.exports.getOneOrder = (req, res, next) => {
+  getAll()
+  
+}
