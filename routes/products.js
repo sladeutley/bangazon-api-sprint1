@@ -1,8 +1,10 @@
-const { Router } = require('express');
-const dirRouter = Router();
-const { getProducts, getOneProduct } = require('../controllers/productsCtrl');
 
-dirRouter.get('/products', getProducts);
-dirRouter.get(`/products/:id`, getOneProduct);
+const { Router } = require("express");
+const prodsRouter = Router();
+const { getProducts, getOneProduct, addOneProduct } = require("../controllers/productsCtrl");
 
-module.exports = dirRouter;
+prodsRouter.get(`/products`, getProducts);
+prodsRouter.get(`/products/:id`, getOneProduct);
+prodsRouter.post(`/products`, addOneProduct); //its fines they're the same route
+
+module.exports = prodsRouter;

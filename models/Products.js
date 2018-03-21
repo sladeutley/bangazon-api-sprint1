@@ -19,3 +19,27 @@ module.exports.getOne = id => {
     });
   });
 };
+
+//POST Products
+module.exports.addOne = ({
+  title,
+  price,
+  description,
+  quantity,
+  dateCreated,
+  type_id,
+  customer_id
+}) => {
+  // const { productsArray } = require('./data/faker/products.json');
+  return new Promise((resolve, reject) => {
+    // productsArray.forEach(({ prod_id, title, price, description, quantity, dateCreated, type_id, customer_id}) => {
+    db.run(
+      `INSERT INTO products
+        VALUES (null, "${title}", "${price}", "${description}", "${quantity}", "${dateCreated}", ${type_id}, ${customer_id})`,
+      (err, prods) => {
+        if (err) return reject(err);
+        resolve(prods);
+      }
+    );
+  });
+};

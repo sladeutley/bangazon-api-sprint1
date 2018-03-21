@@ -1,7 +1,7 @@
 const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("bangazon.sqlite");
 const { readFileSync } = require("fs");
-const prodData = JSON.parse(readFileSync("./data/products.json"));
+const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/customers.json"));
 
 
