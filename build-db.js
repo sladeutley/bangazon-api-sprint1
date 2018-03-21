@@ -60,9 +60,8 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
     addressStreet TEXT,
     addressCity TEXT,
     addressState TEXT,
-    addressZip INTEGER,
+    addressZip INTEGER
   )`,
-      // FOREIGN KEY (payment_id) REFERENCES payment_type(payment_id),
     () => {
       console.log(4);
       custData.forEach(
@@ -83,11 +82,11 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
         "${first_name}",
         "${last_name}",
         "${user_name}",
-        "${phone}",
+        ${phone},
         "${email}",
-        ${addressStreet},
-        ${addressCity},
-        ${addressState},
+        "${addressStreet}",
+        "${addressCity}",
+        "${addressState}",
         ${addressZip}
       )`);
         }
