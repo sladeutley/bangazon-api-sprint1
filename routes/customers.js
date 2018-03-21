@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const custRouter = Router();
-const { getAllCustomers, getOneCust } = require('../controllers/custCtrl');
+const { getAllCustomers, getOneCustomer } = require('../controllers/custCtrl');
 
 
-movieRouter.get("/movies", getAllCustomers);
-movieRouter.get('/movies/:movieId', getOneCust);
+custRouter.get("/customers", getAllCustomers);
+custRouter.get('/customers/:custId', getOneCustomer);
 
 module.exports = custRouter;

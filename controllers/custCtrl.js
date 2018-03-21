@@ -3,21 +3,22 @@ const { getAll } = require('../models/Customer');
 const { getOne } = require('../models/Customer');
 
 
-module.exports.getCustomers = (req, res, next) => {
+module.exports.getAllCustomers = (req, res, next) => {
     getAll()
-    .then( (direx) => {
-        res.status(200).json(direx);
+    .then( (cust) => {
+        res.status(200).json(cust);
     })
     .catch( (err) => next(err));
 };
 
 module.exports.getOneCustomer = (req, res, next) => {
-    let dirId= req.params.dirId;
-    getOne(Id)
-    .then( (direx) => {
-      res.status(200).json(direx);
+    let custId= req.params.custId;
+    getOne(custId)
+    .then( (cust) => {
+      res.status(200).json(cust);
     })
     .catch( (err) => {
       next(err);
     });
   };
+
