@@ -23,10 +23,11 @@ module.exports.generateCustomers = () => {
       "user_name": userName,
       "phone": phoneNumber,
       email,
+      addressStreet,
       addressCity,
       addressState,
       addressZip
-    })
+    });
   }
   return customers;
-}
+};
