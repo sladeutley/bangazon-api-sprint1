@@ -9,3 +9,13 @@ module.exports.getAll = () => {
     });
   });
 };
+
+//GET SINGLE PRODUCT
+module.exports.getOne = id => {
+  return new Promise((resolve, reject) => {
+    db.get(`SELECT * FROM products WHERE prod_id = ${id}`, (err, prods) => {
+      if (err) return reject(err);
+      resolve(prods);
+    });
+  });
+};
