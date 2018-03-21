@@ -1,0 +1,26 @@
+{
+  "name": "bangazon-api-sprint1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sheepish-Squirrels/bangazon-api-sprint1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sheepish-Squirrels/bangazon-api-sprint1/issues"
+  },
+  "homepage": "https://github.com/Sheepish-Squirrels/bangazon-api-sprint1#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "faker": "^4.1.0",
+    "sqlite3": "^4.0.0"
+  }
+}

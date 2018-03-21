@@ -1,0 +1,231 @@
+[
+  {
+    "title": "Fantastic Cotton Bike",
+    "price": "872.00",
+    "description": "Labore ea fugiat.",
+    "quantity": 4563,
+    "dateCreated": "2018-02-10",
+    "type_id": 4,
+    "customer_id": 19
+  },
+  {
+    "title": "Small Soft Towels",
+    "price": "383.00",
+    "description": "Officia quis in ea.",
+    "quantity": 42215,
+    "dateCreated": "2018-02-03",
+    "type_id": 6,
+    "customer_id": 50
+  },
+  {
+    "title": "Sleek Cotton Chips",
+    "price": "669.00",
+    "description":
+      "Expedita sint rerum quo repudiandae quis laudantium vel nisi error.",
+    "quantity": 98089,
+    "dateCreated": "2017-06-22",
+    "type_id": 9,
+    "customer_id": 31
+  },
+  {
+    "title": "Gorgeous Soft Chair",
+    "price": "512.00",
+    "description":
+      "Aliquam assumenda quia inventore aspernatur eos qui corrupti illo.",
+    "quantity": 14119,
+    "dateCreated": "2017-09-19",
+    "type_id": 9,
+    "customer_id": 17
+  },
+  {
+    "title": "Refined Granite Shirt",
+    "price": "590.00",
+    "description": "Hic exercitationem cumque.",
+    "quantity": 60247,
+    "dateCreated": "2017-10-02",
+    "type_id": 4,
+    "customer_id": 28
+  },
+  {
+    "title": "Intelligent Steel Sausages",
+    "price": "346.00",
+    "description":
+      "Occaecati quisquam maxime maxime ullam labore distinctio et.",
+    "quantity": 14729,
+    "dateCreated": "2017-12-26",
+    "type_id": 7,
+    "customer_id": 35
+  },
+  {
+    "title": "Ergonomic Plastic Mouse",
+    "price": "388.00",
+    "description": "Et quo odit id alias dolorum adipisci.",
+    "quantity": 69803,
+    "dateCreated": "2017-07-26",
+    "type_id": 9,
+    "customer_id": 16
+  },
+  {
+    "title": "Licensed Soft Bike",
+    "price": "368.00",
+    "description": "Temporibus aliquid et magni quia.",
+    "quantity": 40461,
+    "dateCreated": "2017-10-06",
+    "type_id": 6,
+    "customer_id": 3
+  },
+  {
+    "title": "Gorgeous Cotton Bike",
+    "price": "378.00",
+    "description": "Ipsam id voluptatum enim.",
+    "quantity": 13636,
+    "dateCreated": "2018-01-01",
+    "type_id": 6,
+    "customer_id": 13
+  },
+  {
+    "title": "Gorgeous Plastic Pants",
+    "price": "818.00",
+    "description": "Quidem dolorum id eum.",
+    "quantity": 48154,
+    "dateCreated": "2017-06-03",
+    "type_id": 6,
+    "customer_id": 30
+  },
+  {
+    "title": "Licensed Cotton Gloves",
+    "price": "474.00",
+    "description": "Magni dolor alias necessitatibus eum.",
+    "quantity": 26265,
+    "dateCreated": "2017-05-02",
+    "type_id": 3,
+    "customer_id": 36
+  },
+  {
+    "title": "Handcrafted Steel Chips",
+    "price": "861.00",
+    "description": "Iure quia non non vero fugiat ipsum vel.",
+    "quantity": 74255,
+    "dateCreated": "2017-12-11",
+    "type_id": 3,
+    "customer_id": 35
+  },
+  {
+    "title": "Unbranded Soft Shoes",
+    "price": "618.00",
+    "description": "Alias aut id molestiae aut animi autem fugiat.",
+    "quantity": 80803,
+    "dateCreated": "2017-10-15",
+    "type_id": 9,
+    "customer_id": 43
+  },
+  {
+    "title": "Ergonomic Metal Bike",
+    "price": "515.00",
+    "description":
+      "Et sunt alias minima laudantium et voluptatibus tenetur vel.",
+    "quantity": 47948,
+    "dateCreated": "2017-09-10",
+    "type_id": 2,
+    "customer_id": 35
+  },
+  {
+    "title": "Awesome Steel Hat",
+    "price": "444.00",
+    "description": "Autem deserunt eaque reiciendis.",
+    "quantity": 93298,
+    "dateCreated": "2017-11-10",
+    "type_id": 2,
+    "customer_id": 11
+  },
+  {
+    "title": "Ergonomic Concrete Pants",
+    "price": "885.00",
+    "description": "Alias ex sit est et exercitationem.",
+    "quantity": 63910,
+    "dateCreated": "2017-12-31",
+    "type_id": 2,
+    "customer_id": 24
+  },
+  {
+    "title": "Small Rubber Towels",
+    "price": "584.00",
+    "description": "Tenetur odio quam dolores fugit.",
+    "quantity": 25831,
+    "dateCreated": "2017-05-14",
+    "type_id": 9,
+    "customer_id": 46
+  },
+  {
+    "title": "Licensed Cotton Shoes",
+    "price": "825.00",
+    "description": "Dolores aut rem eum maiores ipsum atque ut.",
+    "quantity": 88020,
+    "dateCreated": "2017-07-01",
+    "type_id": 10,
+    "customer_id": 2
+  },
+  {
+    "title": "Sleek Plastic Pants",
+    "price": "442.00",
+    "description": "Modi eaque ipsam animi autem dolor iure animi.",
+    "quantity": 84957,
+    "dateCreated": "2017-06-28",
+    "type_id": 1,
+    "customer_id": 20
+  },
+  {
+    "title": "Incredible Soft Chair",
+    "price": "451.00",
+    "description": "Ex nihil rerum omnis eligendi odit.",
+    "quantity": 93891,
+    "dateCreated": "2017-11-03",
+    "type_id": 11,
+    "customer_id": 36
+  },
+  {
+    "title": "Handmade Concrete Gloves",
+    "price": "464.00",
+    "description": "Animi inventore dolor id.",
+    "quantity": 88002,
+    "dateCreated": "2017-12-19",
+    "type_id": 7,
+    "customer_id": 40
+  },
+  {
+    "title": "Generic Metal Mouse",
+    "price": "176.00",
+    "description": "Velit consequatur nihil earum.",
+    "quantity": 13365,
+    "dateCreated": "2017-04-05",
+    "type_id": 4,
+    "customer_id": 13
+  },
+  {
+    "title": "Handmade Plastic Table",
+    "price": "23.00",
+    "description": "Quas qui repellendus dolorum ad non voluptatem omnis.",
+    "quantity": 34177,
+    "dateCreated": "2017-11-22",
+    "type_id": 9,
+    "customer_id": 33
+  },
+  {
+    "title": "Awesome Soft Tuna",
+    "price": "111.00",
+    "description": "Sint a et harum quia repellat esse et.",
+    "quantity": 41398,
+    "dateCreated": "2017-09-30",
+    "type_id": 2,
+    "customer_id": 50
+  },
+  {
+    "title": "Refined Steel Chicken",
+    "price": "157.00",
+    "description": "Non omnis molestias iure ullam velit.",
+    "quantity": 67125,
+    "dateCreated": "2017-11-13",
+    "type_id": 10,
+    "customer_id": 27
+  }
+]
