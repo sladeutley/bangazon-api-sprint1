@@ -1,4 +1,4 @@
-const { getAll, getOne, addOne } = require("../models/Products");
+const { getAll, getOne, addOne, editOne } = require("../models/Products");
 
 module.exports.getProducts = (req, res, next) => {
   getAll()
@@ -17,8 +17,17 @@ module.exports.getOneProduct = (req, res, next) => {
 };
 
 module.exports.addOneProduct = (req, res, next) => {
-  console.log('req.body',req.body);
   addOne(req.body)
+    .then(prods => {
+      res.status(200).json(prods);
+    })
+    .catch(err => next(err));
+};
+
+module.exports.editProductInfo = (req, res, next) => {
+  console.log('req.params.id',req.params.id);
+  console.log('req.body',req.body);
+  editOne(req.params.id, req.body)
     .then(prods => {
       res.status(200).json(prods);
     })
