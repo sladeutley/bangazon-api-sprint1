@@ -3,7 +3,7 @@
 const { getAll, getOne } = require('../models/Order');
 const Order = require("../models/Order");
 
-
+// Get all orders
 module.exports.getAllOrders = (req, res, next) => {
   getAll()
   .then( (orders) => {
@@ -14,7 +14,7 @@ module.exports.getAllOrders = (req, res, next) => {
   });
 };
 
-
+// Get one order
 module.exports.getOneOrder = ({ params: { id } }, res, next) => {
   Order.getOne(id)
     .then(order => {
@@ -28,6 +28,7 @@ module.exports.getOneOrder = ({ params: { id } }, res, next) => {
     .catch(err => next(err));
 };
 
+// Post one order
 module.exports.addOneOrder = (req, res, next) => {
   console.log('req.body',req.body);
   addOne(req.body)

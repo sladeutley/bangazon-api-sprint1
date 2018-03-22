@@ -1,0 +1,232 @@
+[
+  {
+    "title": "Ergonomic Concrete Bike",
+    "price": "848.00",
+    "description": "Architecto libero laboriosam illo.",
+    "quantity": 7384,
+    "dateCreated": "2018-03-02",
+    "type_id": 2,
+    "customer_id": 45
+  },
+  {
+    "title": "Licensed Wooden Bacon",
+    "price": "639.00",
+    "description": "Incidunt assumenda rerum velit voluptatem voluptatem.",
+    "quantity": 68731,
+    "dateCreated": "2017-06-24",
+    "type_id": 2,
+    "customer_id": 13
+  },
+  {
+    "title": "Awesome Steel Towels",
+    "price": "244.00",
+    "description": "Minima nobis qui.",
+    "quantity": 61596,
+    "dateCreated": "2017-05-03",
+    "type_id": 9,
+    "customer_id": 38
+  },
+  {
+    "title": "Practical Frozen Salad",
+    "price": "285.00",
+    "description": "Iure quas eum aliquid accusamus quas magni.",
+    "quantity": 35794,
+    "dateCreated": "2017-05-18",
+    "type_id": 6,
+    "customer_id": 13
+  },
+  {
+    "title": "Handcrafted Wooden Chicken",
+    "price": "974.00",
+    "description":
+      "Vitae assumenda pariatur beatae corporis eos omnis cum eos voluptas.",
+    "quantity": 3986,
+    "dateCreated": "2018-03-10",
+    "type_id": 1,
+    "customer_id": 43
+  },
+  {
+    "title": "Practical Metal Towels",
+    "price": "45.00",
+    "description":
+      "Molestias dignissimos necessitatibus amet sit est ut minus.",
+    "quantity": 47438,
+    "dateCreated": "2017-04-16",
+    "type_id": 1,
+    "customer_id": 19
+  },
+  {
+    "title": "Awesome Concrete Chips",
+    "price": "625.00",
+    "description": "Voluptatibus eum incidunt odit fuga.",
+    "quantity": 56555,
+    "dateCreated": "2017-07-09",
+    "type_id": 11,
+    "customer_id": 39
+  },
+  {
+    "title": "Practical Concrete Sausages",
+    "price": "814.00",
+    "description": "Aliquid recusandae molestiae quaerat qui ipsa.",
+    "quantity": 36507,
+    "dateCreated": "2018-03-16",
+    "type_id": 9,
+    "customer_id": 12
+  },
+  {
+    "title": "Ergonomic Fresh Towels",
+    "price": "146.00",
+    "description": "Delectus inventore dolorem occaecati eum numquam.",
+    "quantity": 57612,
+    "dateCreated": "2017-08-15",
+    "type_id": 6,
+    "customer_id": 3
+  },
+  {
+    "title": "Licensed Soft Cheese",
+    "price": "88.00",
+    "description": "Saepe facilis itaque eaque.",
+    "quantity": 81781,
+    "dateCreated": "2018-01-15",
+    "type_id": 8,
+    "customer_id": 3
+  },
+  {
+    "title": "Handmade Cotton Mouse",
+    "price": "957.00",
+    "description": "Et et rem et quis quo unde est inventore a.",
+    "quantity": 78457,
+    "dateCreated": "2018-01-27",
+    "type_id": 6,
+    "customer_id": 17
+  },
+  {
+    "title": "Refined Wooden Table",
+    "price": "894.00",
+    "description": "Nulla sit voluptatem debitis.",
+    "quantity": 60633,
+    "dateCreated": "2018-03-17",
+    "type_id": 9,
+    "customer_id": 17
+  },
+  {
+    "title": "Gorgeous Rubber Towels",
+    "price": "461.00",
+    "description":
+      "Ea aut dignissimos quisquam ipsam inventore sunt et maxime pariatur.",
+    "quantity": 61888,
+    "dateCreated": "2017-03-23",
+    "type_id": 8,
+    "customer_id": 44
+  },
+  {
+    "title": "Handcrafted Rubber Bacon",
+    "price": "979.00",
+    "description": "Numquam modi velit voluptatem.",
+    "quantity": 37709,
+    "dateCreated": "2018-02-09",
+    "type_id": 8,
+    "customer_id": 12
+  },
+  {
+    "title": "Awesome Rubber Pizza",
+    "price": "670.00",
+    "description": "Aut necessitatibus rerum voluptatum sint.",
+    "quantity": 91086,
+    "dateCreated": "2018-03-02",
+    "type_id": 7,
+    "customer_id": 26
+  },
+  {
+    "title": "Gorgeous Granite Fish",
+    "price": "897.00",
+    "description": "Qui ut voluptatem sequi qui quia quibusdam.",
+    "quantity": 18193,
+    "dateCreated": "2017-04-27",
+    "type_id": 10,
+    "customer_id": 10
+  },
+  {
+    "title": "Intelligent Cotton Car",
+    "price": "478.00",
+    "description": "Nihil natus corporis dolorem minus possimus tenetur et.",
+    "quantity": 54354,
+    "dateCreated": "2017-04-02",
+    "type_id": 11,
+    "customer_id": 23
+  },
+  {
+    "title": "Small Metal Mouse",
+    "price": "539.00",
+    "description":
+      "Nulla vel sapiente dignissimos numquam non itaque officia facere quo.",
+    "quantity": 33836,
+    "dateCreated": "2017-09-22",
+    "type_id": 7,
+    "customer_id": 1
+  },
+  {
+    "title": "Awesome Fresh Pants",
+    "price": "878.00",
+    "description": "Itaque nulla velit est aut.",
+    "quantity": 26258,
+    "dateCreated": "2018-01-05",
+    "type_id": 3,
+    "customer_id": 31
+  },
+  {
+    "title": "Sleek Granite Hat",
+    "price": "945.00",
+    "description": "Accusamus aut quia iste modi non est autem aut.",
+    "quantity": 90981,
+    "dateCreated": "2018-01-05",
+    "type_id": 1,
+    "customer_id": 36
+  },
+  {
+    "title": "Intelligent Rubber Bike",
+    "price": "254.00",
+    "description": "Facilis est non soluta est laudantium dolor voluptatum.",
+    "quantity": 91154,
+    "dateCreated": "2017-11-22",
+    "type_id": 4,
+    "customer_id": 33
+  },
+  {
+    "title": "Incredible Soft Tuna",
+    "price": "67.00",
+    "description": "Rem dolorem vero doloremque veritatis repellat.",
+    "quantity": 26578,
+    "dateCreated": "2018-01-25",
+    "type_id": 9,
+    "customer_id": 24
+  },
+  {
+    "title": "Licensed Wooden Keyboard",
+    "price": "298.00",
+    "description":
+      "Mollitia et cumque error odit expedita doloribus adipisci corrupti voluptatem.",
+    "quantity": 5423,
+    "dateCreated": "2017-11-07",
+    "type_id": 1,
+    "customer_id": 42
+  },
+  {
+    "title": "Awesome Frozen Car",
+    "price": "506.00",
+    "description": "Eos necessitatibus quis in exercitationem autem.",
+    "quantity": 38732,
+    "dateCreated": "2017-04-13",
+    "type_id": 1,
+    "customer_id": 31
+  },
+  {
+    "title": "Small Granite Chicken",
+    "price": "246.00",
+    "description": "Consequatur repudiandae sit soluta sunt.",
+    "quantity": 62953,
+    "dateCreated": "2018-03-13",
+    "type_id": 9,
+    "customer_id": 17
+  }
+]
