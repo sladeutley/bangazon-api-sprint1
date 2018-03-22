@@ -17,7 +17,7 @@ let prodStream = createWriteStream(`./data/products.json`);
 prodStream.write(JSON.stringify(products));
 
 // creating orders JSON
-let orders = generateOrders(products.length, customers.length, paymentTypes.length);
+let orders = generateOrders(products.length, customers.length);
 let orderStream = createWriteStream(`./data/orders.json`);
 orderStream.write(JSON.stringify(orders));
 

@@ -1,0 +1,127 @@
+[
+  {
+    "customer_id": 6,
+    "transactionDate": "2018-03-05",
+    "paymentType_id": 91000
+  },
+  {
+    "customer_id": 10,
+    "transactionDate": "2018-02-17",
+    "paymentType_id": 56448
+  },
+  {
+    "customer_id": 2,
+    "transactionDate": "2017-07-07",
+    "paymentType_id": 73204
+  },
+  {
+    "customer_id": 34,
+    "transactionDate": "2017-10-28",
+    "paymentType_id": 73337
+  },
+  {
+    "customer_id": 30,
+    "transactionDate": "2017-07-22",
+    "paymentType_id": 10545
+  },
+  {
+    "customer_id": 3,
+    "transactionDate": "2018-01-26",
+    "paymentType_id": 83741
+  },
+  {
+    "customer_id": 13,
+    "transactionDate": "2017-07-14",
+    "paymentType_id": 24302
+  },
+  {
+    "customer_id": 4,
+    "transactionDate": "2018-01-22",
+    "paymentType_id": 72544
+  },
+  {
+    "customer_id": 36,
+    "transactionDate": "2017-03-29",
+    "paymentType_id": 23909
+  },
+  {
+    "customer_id": 39,
+    "transactionDate": "2017-07-09",
+    "paymentType_id": 46950
+  },
+  {
+    "customer_id": 2,
+    "transactionDate": "2017-11-08",
+    "paymentType_id": 67497
+  },
+  {
+    "customer_id": 40,
+    "transactionDate": "2018-02-15",
+    "paymentType_id": 28932
+  },
+  {
+    "customer_id": 3,
+    "transactionDate": "2017-11-24",
+    "paymentType_id": 19732
+  },
+  {
+    "customer_id": 38,
+    "transactionDate": "2017-06-27",
+    "paymentType_id": 82539
+  },
+  {
+    "customer_id": 44,
+    "transactionDate": "2017-08-10",
+    "paymentType_id": 78391
+  },
+  {
+    "customer_id": 36,
+    "transactionDate": "2018-03-08",
+    "paymentType_id": 20557
+  },
+  {
+    "customer_id": 15,
+    "transactionDate": "2017-08-07",
+    "paymentType_id": 11322
+  },
+  {
+    "customer_id": 14,
+    "transactionDate": "2017-11-22",
+    "paymentType_id": 58363
+  },
+  {
+    "customer_id": 43,
+    "transactionDate": "2017-05-15",
+    "paymentType_id": 69434
+  },
+  {
+    "customer_id": 30,
+    "transactionDate": "2017-04-23",
+    "paymentType_id": 42698
+  },
+  {
+    "customer_id": 39,
+    "transactionDate": "2018-01-25",
+    "paymentType_id": 55314
+  },
+  {
+    "customer_id": 9,
+    "transactionDate": "2017-06-04",
+    "paymentType_id": 28595
+  },
+  {
+    "customer_id": 45,
+    "transactionDate": "2018-01-30",
+    "paymentType_id": 18626
+  },
+  {
+    "customer_id": 19,
+    "transactionDate": "2017-06-12",
+    "paymentType_id": 72879
+  },
+  {
+    "customer_id": 34,
+    "transactionDate": "2017-07-18",
+    "paymentType_id": 56008
+  }
+]

@@ -12,7 +12,7 @@
 
   },
   {
-    "paymentType_id": "Practical Soft Tuna",
+    "paymentType_id": 3,
     "paymentName": "checking",
     "acctNum": 123
   }

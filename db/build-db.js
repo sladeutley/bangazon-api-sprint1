@@ -94,4 +94,35 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
       );
     }
   );
+
+  db.run(`DROP TABLE IF EXISTS orders`);
+  console.log(5);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS orders (
+    order_id INTEGER PRIMARY KEY,
+    transactionDate TEXT,
+    paymentType INTEGER,
+    customer_id INTEGER,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+
+
+    )`, () => {
+      orderData.forEach(
+        ({
+          order_id,
+          transactionDate,
+          paymentType_id,
+          customer_id
+        }) => {
+          db.run(`INSERT INTO orders VALUES (
+        null,
+        "${transactionDate}",
+        ${paymentType_id},
+        ${customer_id}
+      )`);
+        }
+      );
+
+    })
+
 });
