@@ -4,13 +4,11 @@ const db = new sqlite3.Database('./bangazon.sqlite');
 
 // Get all orders
 module.exports.getAll = () => {
-  return new Promise( (resolve, reject) => {
-    db.all(`SELECT * FROM orders`,
-      (err, orders) => {
-        if (err) return reject(err);
-          resolve(orders);
-      }
-    );
+  return new Promise((resolve, reject) => {
+    db.all(`SELECT * FROM orders`, (err, orders) => {
+      if (err) return reject(err);
+      resolve(orders);
+    });
   });
 };
 
@@ -68,11 +66,11 @@ module.exports.editOne = (id, {
 };
 
 // Delete order by order ID
-module.exports.deleteOne = (id) => {
+module.exports.deleteOne = id => {
   return new Promise((resolve, reject) => {
     db.run(
       `DELETE FROM orders
-      WHERE order_id = ${id}`, 
+      WHERE order_id = ${id}`,
       (err, orders) => {
         if (err) return reject(err);
         resolve(orders);
