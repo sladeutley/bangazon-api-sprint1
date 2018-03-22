@@ -9,8 +9,8 @@ const {
 
 router.get("/paymentTypes", getPaymentTypes);
 router.get("/paymentTypes/:id", getOnePaymentType);
-// router.post("/paymentTypes", addPaymentType);
-// router.put("/paymentTypes/:id", editPaymentType);
-// router.delete("/paymentTypes/:id", deletePaymentType);
+router.put("/paymentTypes/:id", editNewPaymentType)
+router.post("/paymentTypes", addPaymentType);
+router.delete("/paymentTypes/:id", deletePaymentType);
 
 module.exports = router;

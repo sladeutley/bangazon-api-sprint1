@@ -75,7 +75,21 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
       PaymentTypeID INTEGER PRIMARY KEY, 
       account_number INT,
       customer_id INT
-    )`);
+    )`,
+  () => {
+    console.log(3);
+    payment_types.forEach( 
+      ({payment_type, 
+        account_number, 
+        customer_id
+      }) => {
+      db.run(`INSERT INTO PaymentTypes VALUES (
+        "${payment_type}", 
+        "${account_number}", 
+        "${customer_id}"
+      )`);
+  }
+);
   }
 );
 
