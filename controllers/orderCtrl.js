@@ -1,6 +1,6 @@
 'use strict';
 
-const { getAll, getOne } = require('../models/Order');
+const { getAll, getOne, addOne, editOne } = require('../models/Order');
 const Order = require("../models/Order");
 
 // Get all orders
@@ -32,6 +32,17 @@ module.exports.getOneOrder = ({ params: { id } }, res, next) => {
 module.exports.addOneOrder = (req, res, next) => {
   console.log('req.body',req.body);
   addOne(req.body)
+    .then(orders => {
+      res.status(200).json(orders);
+    })
+    .catch(err => next(err));
+};
+
+// Put/edit one order
+module.exports.editOrder = (req, res, next) => {
+  console.log('req.params.id',req.params.id);
+  console.log('req.body',req.body);
+  editOne(req.params.id, req.body)
     .then(orders => {
       res.status(200).json(orders);
     })

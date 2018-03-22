@@ -101,7 +101,7 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
     `CREATE TABLE IF NOT EXISTS orders (
     order_id INTEGER PRIMARY KEY,
     transactionDate TEXT,
-    paymentType INTEGER,
+    paymentType_id INTEGER,
     customer_id INTEGER,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 

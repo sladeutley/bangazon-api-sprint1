@@ -27,17 +27,38 @@ module.exports.getOne = id => {
 
 // POST Order
 module.exports.addOne = ({
-  customer_id,
   transactionDate,
-  paymentType_id
+  paymentType_id,
+  customer_id
 }) => {
   return new Promise((resolve, reject) => {
     db.run(
       `INSERT INTO orders
-        VALUES (null, "${customer_id}", "${transactionDate}", "${paymentType_id}")`,
+        VALUES (null, "${transactionDate}", ${paymentType_id}, ${customer_id})`,
       (err, orders) => {
         if (err) return reject(err);
         resolve(orders);
+      }
+    );
+  });
+};
+
+// Put/edit an order
+module.exports.editOne = (id, {
+  transactionDate,
+  paymentType_id,
+  customer_id
+  }) => {
+  return new Promise((resolve, reject) => {
+    db.run(
+      `UPDATE orders
+      SET
+      transactionDate = "${transactionDate}",
+      paymentType_id = ${paymentType_id},
+      customer_id = ${customer_id} WHERE customer_id = ${id}`,
+      (err, orders) => {
+        if (err) return reject(err);
+          resolve(orders);
       }
     );
   });
