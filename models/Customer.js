@@ -21,7 +21,7 @@ module.exports.getOne = (custId) => {
 	});
 };
 
-//POST Products
+//POST Customers
 module.exports.addOneCustomer = ({
   first_name,
 	last_name,
@@ -45,7 +45,9 @@ module.exports.addOneCustomer = ({
 	});
 };
 
-module.exports.changeCust = (custId, {
+//PUT Customers
+
+module.exports.editCust = (custId, {
 	first_name,
 	last_name,
 	user_name,
