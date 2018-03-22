@@ -1,9 +1,10 @@
 const sqlite3 = require("sqlite3").verbose();
-const db = new sqlite3.Database("bangazon.sqlite");
+const db = new sqlite3.Database("./db/bangazon.sqlite");
 const { readFileSync } = require("fs");
 const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
+
 
 
 db.serialize(function () { //want db.serialize for pc users does each 'db.run' one by one until each one is finished

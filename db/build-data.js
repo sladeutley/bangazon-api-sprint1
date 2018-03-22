@@ -1,4 +1,3 @@
-
 const { createWriteStream } = require('fs'); 
 const { generateCustomers } = require('../data/faker/customers'); 
 const productTypes = require('../data/prod-types'); 
