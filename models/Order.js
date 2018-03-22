@@ -55,10 +55,25 @@ module.exports.editOne = (id, {
       SET
       transactionDate = "${transactionDate}",
       paymentType_id = ${paymentType_id},
-      customer_id = ${customer_id} WHERE customer_id = ${id}`,
+      customer_id = ${customer_id} WHERE order_id = ${id}`,
       (err, orders) => {
         if (err) return reject(err);
           resolve(orders);
+      }
+    );
+  });
+};
+
+module.exports.deleteOne = (id) => {
+  return new Promise((resolve, reject) => {
+    db.run(
+      `DELETE FROM orders
+      WHERE order_id = ${id}
+      `, 
+      (err, orders) => {
+        if (err) return reject(err);
+        resolve(orders);
+
       }
     );
   });

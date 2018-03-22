@@ -104,8 +104,6 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
     paymentType_id INTEGER,
     customer_id INTEGER,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
-
-
     )`, () => {
       orderData.forEach(
         ({

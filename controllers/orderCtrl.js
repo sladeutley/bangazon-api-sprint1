@@ -1,6 +1,6 @@
 'use strict';
 
-const { getAll, getOne, addOne, editOne } = require('../models/Order');
+const { getAll, getOne, addOne, editOne, deleteOne } = require('../models/Order');
 const Order = require("../models/Order");
 
 // Get all orders
@@ -48,3 +48,15 @@ module.exports.editOrder = (req, res, next) => {
     })
     .catch(err => next(err));
 };
+
+// Delete one order
+module.exports.deleteOrder = (req, res, next) => {
+  console.log('req.params.id',req.params.id);
+  console.log('req.body',req.body);
+  deleteOne(req.params.id)
+    .then(orders => {
+      res.status(200).json(orders);
+    })
+    .catch(err => next(err));
+};
+
