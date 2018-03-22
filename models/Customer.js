@@ -21,16 +21,26 @@ module.exports.getOne = (custId) => {
     });
 };
 
-module.exports.addNewCustomer = () => {
-    const { list } = require("../data/faker/customers.json");
+  //POST Products
+module.exports.addOneCustomer = ({
+    first_name,
+    last_name,
+    user_name,
+    phone,
+    email,
+    addressStreet,
+    addressCity,
+    addressState,
+    addressZip
+  }) => {
     return new Promise((resolve, reject) => {
-      list.forEach(({ first_name, last_name, user_name, phone, email, addressStreet, addressCity, addressState, addressZip }) => {
-        db.run(
-          `INSERT INTO customers
-          VALUES ("${first_name}", "${last_name}", "${user_name}", ${phone}, "${email}", "${addressStreet}", "${addressCity}", "${addressState}", ${addressZip})`
-        );
-      });
-      resolve();
-    })
-  
+      db.run(
+        `INSERT INTO customers
+          VALUES (null, "${first_name}", "${last_name}", "${user_name}", "${phone}", "${email}", "${addressStreet}", "${addressCity}", "${addressState}", ${addressZip})`,
+        (err, cust) => {
+          if (err) return reject(err);
+          resolve(cust);
+        }
+      );
+    });
   };
