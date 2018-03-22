@@ -7,7 +7,8 @@
     "data:generate": "node ./build-data",
     "db:reset": "node db/build-db",
     "start": "nodemon app.js",
-    "test": "nodemon --exec \"mocha --recursive\" -R list"  },
+    "test": "nodemon --exec \"mocha --recursive\" -R list"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sheepish-Squirrels/bangazon-api-sprint1.git"
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/Sheepish-Squirrels/bangazon-api-sprint1#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "faker": "^4.1.0",

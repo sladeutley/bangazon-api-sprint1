@@ -1,6 +1,8 @@
 'use strict';
 
-const { getAll } = require('../models/Order');
+const { getAll, getOne } = require('../models/Order');
+const Order = require("../models/Order");
+
 
 module.exports.getAllOrders = (req, res, next) => {
   getAll()
@@ -12,7 +14,25 @@ module.exports.getAllOrders = (req, res, next) => {
   });
 };
 
-module.exports.getOneOrder = (req, res, next) => {
-  getAll()
-  
-}
+
+module.exports.getOneOrder = ({ params: { id } }, res, next) => {
+  Order.getOne(id)
+    .then(order => {
+      if (order) {
+        res.status(200).json(order);
+      } else {
+        let error = new Error("Order not found")
+        next(error)
+      };
+    })
+    .catch(err => next(err));
+};
+
+module.exports.addOneOrder = (req, res, next) => {
+  console.log('req.body',req.body);
+  addOne(req.body)
+    .then(orders => {
+      res.status(200).json(orders);
+    })
+    .catch(err => next(err));
+};
