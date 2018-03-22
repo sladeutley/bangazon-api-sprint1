@@ -1,16 +1,14 @@
-'use strict';
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
 const routes = require("./routes/");
-const bodyParser = require("body-parser");
 
 console.log("Hello from Express");
 
 // middleware stack starts here
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-app.use("/api/v1/", routes);
-
+app.use("/api/v1", routes);
 
 // TODO: Add error handler
 app.use((req, res, next) => {
@@ -28,7 +26,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; //this is the server port (name) we're creating (e.x. localhost:8080)
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
