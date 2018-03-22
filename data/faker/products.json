@@ -1,0 +1,227 @@
+[
+    {
+        "title": "Awesome Fresh Bike",
+        "price": "825.00",
+        "description": "Eum dolore dolorum voluptatem.",
+        "quantity": 99004,
+        "dateCreated": "2017-05-31",
+        "type_id": 11,
+        "customer_id": 39
+    },
+    {
+        "title": "Tasty Steel Computer",
+        "price": "901.00",
+        "description": "Nihil consequuntur nihil est.",
+        "quantity": 40758,
+        "dateCreated": "2017-06-21",
+        "type_id": 3,
+        "customer_id": 14
+    },
+    {
+        "title": "Handcrafted Rubber Pants",
+        "price": "832.00",
+        "description": "Autem accusamus voluptas dicta reprehenderit quas velit.",
+        "quantity": 50318,
+        "dateCreated": "2017-09-12",
+        "type_id": 2,
+        "customer_id": 32
+    },
+    {
+        "title": "Ergonomic Cotton Chair",
+        "price": "453.00",
+        "description": "Harum occaecati error alias non.",
+        "quantity": 13632,
+        "dateCreated": "2017-04-13",
+        "type_id": 2,
+        "customer_id": 31
+    },
+    {
+        "title": "Fantastic Steel Shoes",
+        "price": "901.00",
+        "description": "Qui qui atque.",
+        "quantity": 30094,
+        "dateCreated": "2017-07-19",
+        "type_id": 9,
+        "customer_id": 9
+    },
+    {
+        "title": "Refined Cotton Mouse",
+        "price": "814.00",
+        "description": "Non a est ullam nulla est magni optio ut.",
+        "quantity": 19310,
+        "dateCreated": "2017-12-07",
+        "type_id": 11,
+        "customer_id": 16
+    },
+    {
+        "title": "Ergonomic Plastic Gloves",
+        "price": "579.00",
+        "description": "Aut voluptatem dicta laborum et temporibus.",
+        "quantity": 5155,
+        "dateCreated": "2017-09-04",
+        "type_id": 3,
+        "customer_id": 49
+    },
+    {
+        "title": "Incredible Cotton Car",
+        "price": "61.00",
+        "description": "Minima iste aut unde est velit.",
+        "quantity": 81679,
+        "dateCreated": "2018-03-16",
+        "type_id": 1,
+        "customer_id": 20
+    },
+    {
+        "title": "Unbranded Fresh Pants",
+        "price": "160.00",
+        "description": "Cumque quo molestiae.",
+        "quantity": 34438,
+        "dateCreated": "2018-01-22",
+        "type_id": 5,
+        "customer_id": 19
+    },
+    {
+        "title": "Rustic Wooden Car",
+        "price": "213.00",
+        "description": "Sit facilis excepturi consequatur est nam.",
+        "quantity": 79151,
+        "dateCreated": "2017-11-15",
+        "type_id": 2,
+        "customer_id": 46
+    },
+    {
+        "title": "Licensed Soft Table",
+        "price": "81.00",
+        "description": "Necessitatibus animi cumque veniam est et corrupti magni.",
+        "quantity": 73738,
+        "dateCreated": "2017-06-20",
+        "type_id": 5,
+        "customer_id": 16
+    },
+    {
+        "title": "Intelligent Soft Keyboard",
+        "price": "489.00",
+        "description": "Maxime quia doloremque aspernatur id aspernatur veritatis.",
+        "quantity": 41829,
+        "dateCreated": "2017-11-28",
+        "type_id": 11,
+        "customer_id": 43
+    },
+    {
+        "title": "Licensed Cotton Chicken",
+        "price": "622.00",
+        "description": "Ab ullam unde non omnis voluptatem in similique.",
+        "quantity": 94064,
+        "dateCreated": "2018-02-27",
+        "type_id": 4,
+        "customer_id": 31
+    },
+    {
+        "title": "Unbranded Plastic Tuna",
+        "price": "550.00",
+        "description": "Ipsam et qui suscipit praesentium deserunt quae quia.",
+        "quantity": 3646,
+        "dateCreated": "2017-05-12",
+        "type_id": 2,
+        "customer_id": 23
+    },
+    {
+        "title": "Rustic Concrete Shirt",
+        "price": "127.00",
+        "description": "Quibusdam non molestiae.",
+        "quantity": 75427,
+        "dateCreated": "2017-05-08",
+        "type_id": 8,
+        "customer_id": 30
+    },
+    {
+        "title": "Intelligent Frozen Pants",
+        "price": "485.00",
+        "description": "Inventore a laborum rerum qui eum.",
+        "quantity": 3182,
+        "dateCreated": "2018-02-02",
+        "type_id": 2,
+        "customer_id": 41
+    },
+    {
+        "title": "Small Frozen Car",
+        "price": "529.00",
+        "description": "Vel facilis sed.",
+        "quantity": 29297,
+        "dateCreated": "2018-02-25",
+        "type_id": 4,
+        "customer_id": 19
+    },
+    {
+        "title": "Unbranded Cotton Pizza",
+        "price": "907.00",
+        "description": "Magni deleniti beatae aperiam excepturi quas.",
+        "quantity": 31548,
+        "dateCreated": "2017-08-10",
+        "type_id": 4,
+        "customer_id": 4
+    },
+    {
+        "title": "Generic Frozen Soap",
+        "price": "573.00",
+        "description": "Eveniet dignissimos inventore eos placeat voluptas voluptatem explicabo aut voluptas.",
+        "quantity": 36772,
+        "dateCreated": "2017-12-21",
+        "type_id": 1,
+        "customer_id": 37
+    },
+    {
+        "title": "Fantastic Granite Towels",
+        "price": "679.00",
+        "description": "Natus nobis eos.",
+        "quantity": 73019,
+        "dateCreated": "2017-10-21",
+        "type_id": 9,
+        "customer_id": 22
+    },
+    {
+        "title": "Practical Concrete Chicken",
+        "price": "315.00",
+        "description": "Non suscipit iste.",
+        "quantity": 65676,
+        "dateCreated": "2017-09-04",
+        "type_id": 9,
+        "customer_id": 41
+    },
+    {
+        "title": "Licensed Frozen Pants",
+        "price": "797.00",
+        "description": "Aut odit itaque qui magnam sunt autem.",
+        "quantity": 6075,
+        "dateCreated": "2018-03-10",
+        "type_id": 5,
+        "customer_id": 26
+    },
+    {
+        "title": "Tasty Plastic Ball",
+        "price": "250.00",
+        "description": "Ratione voluptatem dolorum similique veniam et.",
+        "quantity": 24834,
+        "dateCreated": "2017-08-31",
+        "type_id": 3,
+        "customer_id": 34
+    },
+    {
+        "title": "Ergonomic Rubber Bike",
+        "price": "351.00",
+        "description": "Quidem laboriosam odit non enim labore aut et accusantium.",
+        "quantity": 44694,
+        "dateCreated": "2017-07-22",
+        "type_id": 2,
+        "customer_id": 35
+    },
+    {
+        "title": "Fantastic Concrete Table",
+        "price": "244.00",
+        "description": "Voluptatem laudantium qui.",
+        "quantity": 5263,
+        "dateCreated": "2017-05-31",
+        "type_id": 11,
+        "customer_id": 3
+    }
+]
