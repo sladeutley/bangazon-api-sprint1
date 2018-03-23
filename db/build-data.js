@@ -9,6 +9,7 @@ let customers = generateCustomers();
 let custStream = createWriteStream(`./data/faker/customers.json`);
 custStream.write(JSON.stringify(customers));
 
+// creating products JSON
 // then pass its length, and the product types' length, into the function to create products, so we can randomly assign customer and product type ids to each product
 let products = generateProducts(productTypes.length, customers.length);
 let prodStream = createWriteStream(`./data/faker/products.json`);
@@ -18,3 +19,5 @@ prodStream.write(JSON.stringify(products));
 let orders = generateOrders(products.length, customers.length);
 let orderStream = createWriteStream(`./data/faker/orders.json`);
 orderStream.write(JSON.stringify(orders));
+
+
