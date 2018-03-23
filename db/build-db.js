@@ -2,12 +2,12 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./db/bangazon.sqlite");
 const { readFileSync } = require("fs");
 const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
-const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
-const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
+// const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
+const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
+
 
 db.serialize(function () { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
   db.run(`DROP TABLE IF EXISTS products`);
-  console.log(1);
   db.run(
     `CREATE TABLE IF NOT EXISTS products (
     prod_id INTEGER PRIMARY KEY,
@@ -22,7 +22,6 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
   )`,
     () => {
-      console.log(2);
       prodData.forEach(
         ({
           prod_id,
@@ -48,54 +47,51 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
       );
     }
   );
-  db.run(`DROP TABLE IF EXISTS productTypes`);
+
+  db.run(`DROP TABLE IF EXISTS customers`);
+  console.log(3);
   db.run(
-    `CREATE TABLE IF NOT EXISTS productTypes (
-      prodType_id INTEGER PRIMARY KEY,
-      title TEXT
-    )`,
+    `CREATE TABLE IF NOT EXISTS customers (
+    customer_id INTEGER PRIMARY KEY,
+    firstName TEXT,
+    lastName TEXT,
+    userName TEXT,
+    phoneNumber TEXT,
+    email TEXT,
+    addressStreet TEXT,
+    addressCity TEXT,
+    addressState TEXT,
+    addressZip INTEGER
+  )`,
     () => {
-      console.log(2);
-      prodTypeData.forEach(
+      console.log(4);
+      custData.forEach(
         ({
-          prodType_id,
-          title
+          customer_id,
+          first_name,
+          last_name,
+          user_name,
+          phone,
+          email,
+          addressStreet,
+          addressCity,
+          addressState,
+          addressZip
         }) => {
-          db.run(`INSERT INTO productTypes VALUES (
+          db.run(`INSERT INTO customers VALUES (
         null,
-        "${title}"
-      )`);
-        }
-      );
-    }
-  );
-  db.run(`DROP TABLE IF EXISTS Payment_Types`);
-  db.run(
-    `CREATE TABLE IF NOT EXISTS Payment_Types (
-      PaymentTypeID INTEGER PRIMARY KEY,
-      payment_type TEXT,
-      account_number INT,
-      customer_id INT
-    )`,
-    () => {
-      console.log(3);
-      paymentTypeData.forEach(
-        ({ 
-          paymentType_id,
-          payment_type,
-          account_number,
-          customer_id
-      }) => {
-          db.run(`INSERT INTO Payment_Types VALUES (
-          null,
-        "${payment_type}", 
-        "${account_number}", 
-        "${customer_id}"
+        "${first_name}",
+        "${last_name}",
+        "${user_name}",
+        "${phone}",
+        "${email}",
+        "${addressStreet}",
+        "${addressCity}",
+        "${addressState}",
+        ${addressZip}
       )`);
         }
       );
     }
   );
 });
-
-
