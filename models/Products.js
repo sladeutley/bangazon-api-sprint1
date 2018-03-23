@@ -1,6 +1,7 @@
 const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./db/bangazon.sqlite");
 
+// TODO: MAKE SURE PUT CAN REPLACE JUST ONE PROPERTY ON OBJECT AND REST OF PROPERTIES AREN"T UNDEFINED. OR IS THIS PATCH?
 // TODO: //is this supposed to add to sql table as well?
 // TODO: //Do I need to join productType_id and customer_id?
 
