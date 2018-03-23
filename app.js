@@ -1,3 +1,4 @@
+
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
@@ -10,6 +11,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use("/api/v1", routes);
 
+
+// TODO: Add error handler
 // Error Handler
 
 app.use((req, res, next) => {
@@ -29,5 +32,5 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 3000; //this is the server port (name) we're creating (e.x. localhost:8080)
 app.listen(port, () => {
-    console.log(`listening on port ${port}`);
+  console.log(`listening on port ${port}`);
 });
