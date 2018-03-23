@@ -1,0 +1,111 @@
+[
+  {
+    "payment_type": "withdrawal",
+    "account_number": "08122057",
+    "customer_id": 21
+  },
+  {
+    "payment_type": "withdrawal",
+    "account_number": "24262515",
+    "customer_id": 37
+  },
+  { "payment_type": "invoice", "account_number": "63368107", "customer_id": 3 },
+  {
+    "payment_type": "invoice",
+    "account_number": "49007949",
+    "customer_id": 21
+  },
+  {
+    "payment_type": "deposit",
+    "account_number": "64867581",
+    "customer_id": 26
+  },
+  {
+    "payment_type": "withdrawal",
+    "account_number": "34214142",
+    "customer_id": 34
+  },
+  {
+    "payment_type": "withdrawal",
+    "account_number": "00993894",
+    "customer_id": 41
+  },
+  {
+    "payment_type": "invoice",
+    "account_number": "40885015",
+    "customer_id": 38
+  },
+  { "payment_type": "invoice", "account_number": "17070359", "customer_id": 1 },
+  {
+    "payment_type": "deposit",
+    "account_number": "14173520",
+    "customer_id": 12
+  },
+  {
+    "payment_type": "deposit",
+    "account_number": "52454060",
+    "customer_id": 20
+  },
+  {
+    "payment_type": "payment",
+    "account_number": "95572825",
+    "customer_id": 19
+  },
+  { "payment_type": "payment", "account_number": "41567022", "customer_id": 7 },
+  {
+    "payment_type": "withdrawal",
+    "account_number": "88586501",
+    "customer_id": 14
+  },
+  {
+    "payment_type": "deposit",
+    "account_number": "58265565",
+    "customer_id": 46
+  },
+  {
+    "payment_type": "deposit",
+    "account_number": "02275636",
+    "customer_id": 39
+  },
+  {
+    "payment_type": "payment",
+    "account_number": "61714743",
+    "customer_id": 38
+  },
+  {
+    "payment_type": "withdrawal",
+    "account_number": "73829759",
+    "customer_id": 11
+  },
+  {
+    "payment_type": "deposit",
+    "account_number": "64743150",
+    "customer_id": 45
+  },
+  {
+    "payment_type": "invoice",
+    "account_number": "01730469",
+    "customer_id": 31
+  },
+  {
+    "payment_type": "withdrawal",
+    "account_number": "56179501",
+    "customer_id": 27
+  },
+  {
+    "payment_type": "deposit",
+    "account_number": "85067386",
+    "customer_id": 21
+  },
+  {
+    "payment_type": "deposit",
+    "account_number": "85744842",
+    "customer_id": 37
+  },
+  {
+    "payment_type": "invoice",
+    "account_number": "73397991",
+    "customer_id": 47
+  },
+  { "payment_type": "invoice", "account_number": "49573303", "customer_id": 17 }
+]

@@ -5,6 +5,7 @@ const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
 const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
+const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
 
 db.serialize(function() { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
   db.run(`DROP TABLE IF EXISTS products`);
@@ -140,4 +141,31 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
       );
     }
   )
+
+  db.run(`DROP TABLE IF EXISTS Payment_Types`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS Payment_Types (
+      PaymentTypeID INTEGER PRIMARY KEY,
+      payment_type TEXT,
+      account_number INT,
+      customer_id INT
+    )`,
+    () => {
+      paymentTypeData.forEach(
+        ({ 
+          paymentType_id,
+          payment_type,
+          account_number,
+          customer_id
+      }) => {
+          db.run(`INSERT INTO Payment_Types VALUES (
+          null,
+        "${payment_type}", 
+        "${account_number}", 
+        "${customer_id}"
+      )`);
+        }
+      );
+    }
+  );
 });

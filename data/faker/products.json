@@ -1,0 +1,230 @@
+[
+  {
+    "title": "Tasty Rubber Table",
+    "price": "603.00",
+    "description": "Quo quia sit magnam.",
+    "quantity": 11556,
+    "dateCreated": "2017-11-20",
+    "type_id": 1,
+    "customer_id": 3
+  },
+  {
+    "title": "Ergonomic Rubber Keyboard",
+    "price": "223.00",
+    "description": "Doloribus tempora voluptatem nam.",
+    "quantity": 79614,
+    "dateCreated": "2018-01-31",
+    "type_id": 4,
+    "customer_id": 21
+  },
+  {
+    "title": "Practical Granite Towels",
+    "price": "457.00",
+    "description": "Aperiam ullam est enim quasi ea omnis odio non quo.",
+    "quantity": 31068,
+    "dateCreated": "2018-01-06",
+    "type_id": 8,
+    "customer_id": 48
+  },
+  {
+    "title": "Generic Metal Bike",
+    "price": "306.00",
+    "description": "Perspiciatis aut dicta ut.",
+    "quantity": 75045,
+    "dateCreated": "2017-06-08",
+    "type_id": 10,
+    "customer_id": 42
+  },
+  {
+    "title": "Ergonomic Fresh Ball",
+    "price": "126.00",
+    "description":
+      "Odio et quam dolor dolorem eveniet cupiditate aut possimus.",
+    "quantity": 72893,
+    "dateCreated": "2017-11-26",
+    "type_id": 2,
+    "customer_id": 32
+  },
+  {
+    "title": "Small Frozen Ball",
+    "price": "424.00",
+    "description": "Enim occaecati occaecati et.",
+    "quantity": 39286,
+    "dateCreated": "2018-01-09",
+    "type_id": 1,
+    "customer_id": 9
+  },
+  {
+    "title": "Ergonomic Fresh Gloves",
+    "price": "637.00",
+    "description": "Et repellat vel.",
+    "quantity": 93198,
+    "dateCreated": "2017-11-10",
+    "type_id": 5,
+    "customer_id": 36
+  },
+  {
+    "title": "Handmade Granite Bike",
+    "price": "215.00",
+    "description": "Est eos deleniti inventore cumque.",
+    "quantity": 28696,
+    "dateCreated": "2018-02-26",
+    "type_id": 2,
+    "customer_id": 16
+  },
+  {
+    "title": "Fantastic Plastic Cheese",
+    "price": "825.00",
+    "description": "Et illum sit debitis.",
+    "quantity": 3794,
+    "dateCreated": "2017-05-13",
+    "type_id": 6,
+    "customer_id": 20
+  },
+  {
+    "title": "Practical Metal Car",
+    "price": "802.00",
+    "description": "Eos sit id sequi.",
+    "quantity": 76491,
+    "dateCreated": "2017-04-24",
+    "type_id": 8,
+    "customer_id": 36
+  },
+  {
+    "title": "Sleek Concrete Chicken",
+    "price": "687.00",
+    "description": "Est ut non inventore omnis maxime libero reiciendis et.",
+    "quantity": 31303,
+    "dateCreated": "2018-01-16",
+    "type_id": 6,
+    "customer_id": 18
+  },
+  {
+    "title": "Small Frozen Pizza",
+    "price": "520.00",
+    "description":
+      "Iste quam nam voluptatibus consectetur velit architecto harum molestiae animi.",
+    "quantity": 49502,
+    "dateCreated": "2017-04-30",
+    "type_id": 7,
+    "customer_id": 23
+  },
+  {
+    "title": "Sleek Soft Cheese",
+    "price": "799.00",
+    "description":
+      "Necessitatibus sed a odit dolores aspernatur iste earum occaecati repellat.",
+    "quantity": 9825,
+    "dateCreated": "2017-04-05",
+    "type_id": 6,
+    "customer_id": 17
+  },
+  {
+    "title": "Gorgeous Wooden Sausages",
+    "price": "369.00",
+    "description": "Perspiciatis suscipit magnam commodi nostrum.",
+    "quantity": 42973,
+    "dateCreated": "2018-03-18",
+    "type_id": 10,
+    "customer_id": 24
+  },
+  {
+    "title": "Refined Rubber Gloves",
+    "price": "928.00",
+    "description": "Iusto eos consequatur esse.",
+    "quantity": 80539,
+    "dateCreated": "2017-12-05",
+    "type_id": 11,
+    "customer_id": 29
+  },
+  {
+    "title": "Handmade Granite Fish",
+    "price": "49.00",
+    "description": "Est molestiae et est.",
+    "quantity": 29584,
+    "dateCreated": "2017-05-17",
+    "type_id": 11,
+    "customer_id": 42
+  },
+  {
+    "title": "Fantastic Plastic Chips",
+    "price": "524.00",
+    "description": "Quo tempore cumque saepe consequatur vel voluptatem.",
+    "quantity": 70423,
+    "dateCreated": "2018-03-22",
+    "type_id": 3,
+    "customer_id": 19
+  },
+  {
+    "title": "Tasty Concrete Pizza",
+    "price": "737.00",
+    "description": "Quae doloremque aut.",
+    "quantity": 14921,
+    "dateCreated": "2017-08-18",
+    "type_id": 10,
+    "customer_id": 9
+  },
+  {
+    "title": "Fantastic Frozen Mouse",
+    "price": "293.00",
+    "description": "Omnis fugit totam vel amet aut eveniet blanditiis totam.",
+    "quantity": 49523,
+    "dateCreated": "2018-01-10",
+    "type_id": 10,
+    "customer_id": 3
+  },
+  {
+    "title": "Refined Granite Bike",
+    "price": "463.00",
+    "description": "Nulla explicabo maiores rem.",
+    "quantity": 54500,
+    "dateCreated": "2017-12-15",
+    "type_id": 6,
+    "customer_id": 49
+  },
+  {
+    "title": "Practical Metal Soap",
+    "price": "349.00",
+    "description": "Et veniam nam est aut corrupti aut voluptatibus.",
+    "quantity": 94177,
+    "dateCreated": "2017-11-25",
+    "type_id": 5,
+    "customer_id": 23
+  },
+  {
+    "title": "Handmade Plastic Car",
+    "price": "382.00",
+    "description": "In consectetur quas vel.",
+    "quantity": 93796,
+    "dateCreated": "2017-11-01",
+    "type_id": 6,
+    "customer_id": 20
+  },
+  {
+    "title": "Handcrafted Concrete Ball",
+    "price": "608.00",
+    "description": "Voluptatem earum laborum quas.",
+    "quantity": 64493,
+    "dateCreated": "2017-10-23",
+    "type_id": 11,
+    "customer_id": 14
+  },
+  {
+    "title": "Generic Granite Salad",
+    "price": "256.00",
+    "description": "Alias beatae et in maiores totam.",
+    "quantity": 25629,
+    "dateCreated": "2017-04-03",
+    "type_id": 3,
+    "customer_id": 17
+  },
+  {
+    "title": "Generic Frozen Hat",
+    "price": "229.00",
+    "description": "Asperiores enim asperiores quia sed.",
+    "quantity": 18892,
+    "dateCreated": "2017-08-31",
+    "type_id": 6,
+    "customer_id": 49
+  }
+]
