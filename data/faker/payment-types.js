@@ -1,24 +1,23 @@
 'use strict';
 
-//use Faker to generate Payment Accounts and Types
 const faker = require('faker');
 
-module.exports.generatePaymentTypes = () => {
-
-    let payments = [];
+module.exports.generatePaymentTypes = (customersLen) => {
+    let payment_types = [];
 
     for (let i = 0; i < 25; i++) {
-        let customerId = null;
-        let type = faker.finance.accountName();
-        let accountNumber = faker.finance.account();
+        let type = faker.finance.transactionType();
+        let account_number = faker.finance.account();
+        let customer_id = [Math.floor(Math.random() * customersLen) + 1];
 
-        payments.push({
-            customerId,
-            type,
-            accountNumber
+        payment_types.push({
+            "payment_type": type,
+            account_number,
+            customer_id
         });
     }
-    return payments;
-}
+    return payment_types;
+};
+
 
 
