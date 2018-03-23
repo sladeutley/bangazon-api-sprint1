@@ -6,7 +6,7 @@ const db = new sqlite3.Database("./db/bangazon.sqlite");
 //Get All Payment Types
 module.exports.getAllPaymentTypes = () => {
   return new Promise((resolve, reject) => {
-    db.all(`SELECT * FROM PaymentTypes`, (err, Datas) => {
+    db.all(`SELECT * FROM Payment_Types`, (err, Datas) => {
       if (err) return reject(err);
       resolve(Datas);
     });
@@ -14,10 +14,10 @@ module.exports.getAllPaymentTypes = () => {
 };
 
 //Get One Payment Type
-module.exports.getOnePaymentType = id => {
+module.exports.getSinglePaymentType = id => {
   return new Promise((resolve, reject) => {
     db.all(
-      `SELECT * FROM PaymentTypes WHERE PaymentTypeID = ${id}`,
+      `SELECT * FROM Payment_Types WHERE PaymentTypeID = ${id}`,
       (err, Data) => {
         if (err) return reject(err);
         resolve(Data);
@@ -27,13 +27,16 @@ module.exports.getOnePaymentType = id => {
 };
 
 //Add a New Payment Type
-module.exports.addNewPaymentType = () => {
+module.exports.addNewPaymentType = ({
+  payment_type,
+  account_number,
+  customer_id
+}) => {
   return new Promise((resolve, reject) => {
     db.run(
-      `INSERT INTO Payment_Types (payment_type, account_number, customer_id) VALUES (
-      '${body.payment_type}', 
-      '${body.account_number}', 
-      '${body.customer_id} ')`,
+      `INSERT INTO Payment_Types 
+      VALUES (null, "${payment_type}", ${account_number}, ${customer_id})`,
+
       (err, Data) => {
         if (err) return reject(err);
         resolve(Data);
@@ -43,13 +46,18 @@ module.exports.addNewPaymentType = () => {
 };
 
 //Edit Payment Type
-module.exports.editPaymentType = (id) => {
+module.exports.editOnePaymentType = (id,{
+    payment_type,
+    account_number,
+    customer_id
+}
+) => {
   return new Promise((resolve, reject) => {
     db.run(
       `UPDATE Payment_Types SET 
-        payment_type = '${body.payment_type}', 
-        account_number = '${body.account_number}', 
-        customer_id = '${body.customer_id}' WHERE PaymentTypeID = '${id}'`,
+        payment_type = '${payment_type}', 
+        account_number = '${account_number}', 
+        customer_id = '${customer_id}' WHERE PaymentTypeID = '${id}'`,
       (err, Data) => {
         if (err) return reject(err);
         resolve(Data);
@@ -58,3 +66,15 @@ module.exports.editPaymentType = (id) => {
   });
 };
 
+//Delete One Payment Type
+module.exports.deleteSinglePaymentType = id => {
+  return new Promise((resolve, reject) => {
+    db.run(
+      `DELETE FROM Payment_Types WHERE PaymentTypeID = ${id}`,
+      (err, Data) => {
+        if (err) return reject(err);
+        resolve(Data);
+      }
+    );
+  });
+};
