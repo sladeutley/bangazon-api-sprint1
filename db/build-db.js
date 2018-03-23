@@ -4,10 +4,9 @@ const { readFileSync } = require("fs");
 const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
+const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
 
-
-
-db.serialize(function () { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
+db.serialize(function() { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
   db.run(`DROP TABLE IF EXISTS products`);
   db.run(
     `CREATE TABLE IF NOT EXISTS products (
@@ -50,7 +49,6 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
   );
 
   db.run(`DROP TABLE IF EXISTS customers`);
-  console.log(3);
   db.run(
     `CREATE TABLE IF NOT EXISTS customers (
     customer_id INTEGER PRIMARY KEY,
@@ -65,7 +63,6 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
     addressZip INTEGER
   )`,
     () => {
-      console.log(4);
       custData.forEach(
         ({
           customer_id,
@@ -97,7 +94,6 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
   );
 
   db.run(`DROP TABLE IF EXISTS orders`);
-  console.log(5);
   db.run(
     `CREATE TABLE IF NOT EXISTS orders (
     order_id INTEGER PRIMARY KEY,
@@ -124,4 +120,24 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
 
     })
 
+  db.run(`DROP TABLE IF EXISTS productTypes`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS productTypes (
+      prodType_id INTEGER PRIMARY KEY,
+      title TEXT
+    )`,
+    () => {
+      prodTypeData.forEach(
+        ({
+          prodType_id,
+          title
+        }) => {
+          db.run(`INSERT INTO productTypes VALUES (
+        null,
+        "${title}"
+      )`);
+        }
+      );
+    }
+  )
 });
