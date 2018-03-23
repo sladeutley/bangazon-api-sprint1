@@ -1,8 +1,10 @@
-// http://localhost:8080/api/v1/movies/${id}
+'use strict';
 const { Router } = require('express');
 const router = Router();
 
 router.use(require('./customers'));
+router.use(require('./orders'));
+
 
 
 module.exports = router;
