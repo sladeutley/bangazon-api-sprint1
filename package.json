@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "data:generate": "node ./build-data",
-    "db:reset": "node db/build-db",
+    "data:generate": "node db/build-data.js",
+    "db:reset": "node db/build-db.js",
     "start": "nodemon app.js",
     "test": "nodemon --exec \"mocha --recursive\" -R list"
   },
