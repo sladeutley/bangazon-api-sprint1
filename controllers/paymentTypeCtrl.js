@@ -40,7 +40,6 @@ module.exports.deleteOnePaymentType = ({ params: { id } }, res, next) => {
 
 //Add New Payment Type
 module.exports.addPaymentType = (req, res, next) => {
-  console.log('req.body', req.body);
   addNewPaymentType(req.body)
     .then(Data => {
       res.status(200).json(Data);
