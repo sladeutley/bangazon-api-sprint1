@@ -6,8 +6,10 @@ const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
 const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
 const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
+const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
 
-db.serialize(function() { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
+db.serialize(function() {
+  //want db.serialize for pc users does each 'db.run' one by one until each one is finished
   db.run(`DROP TABLE IF EXISTS products`);
   db.run(
     `CREATE TABLE IF NOT EXISTS products (
@@ -102,14 +104,10 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
     paymentType_id INTEGER,
     customer_id INTEGER,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
-    )`, () => {
+    )`,
+    () => {
       orderData.forEach(
-        ({
-          order_id,
-          transactionDate,
-          paymentType_id,
-          customer_id
-        }) => {
+        ({ order_id, transactionDate, paymentType_id, customer_id }) => {
           db.run(`INSERT INTO orders VALUES (
         null,
         "${transactionDate}",
@@ -118,8 +116,8 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
       )`);
         }
       );
-
-    })
+    }
+  );
 
   db.run(`DROP TABLE IF EXISTS productTypes`);
   db.run(
@@ -128,19 +126,14 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
       title TEXT
     )`,
     () => {
-      prodTypeData.forEach(
-        ({
-          prodType_id,
-          title
-        }) => {
-          db.run(`INSERT INTO productTypes VALUES (
+      prodTypeData.forEach(({ prodType_id, title }) => {
+        db.run(`INSERT INTO productTypes VALUES (
         null,
         "${title}"
       )`);
-        }
-      );
+      });
     }
-  )
+  );
 
   db.run(`DROP TABLE IF EXISTS Payment_Types`);
   db.run(
@@ -152,12 +145,7 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
     )`,
     () => {
       paymentTypeData.forEach(
-        ({ 
-          paymentType_id,
-          payment_type,
-          account_number,
-          customer_id
-      }) => {
+        ({ paymentType_id, payment_type, account_number, customer_id }) => {
           db.run(`INSERT INTO Payment_Types VALUES (
           null,
         "${payment_type}", 
@@ -166,6 +154,25 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
       )`);
         }
       );
+    }
+  );
+
+  db.run(`DROP TABLE IF EXISTS computers`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS computers (
+      comp_id INTEGER PRIMARY KEY,
+      datePurchased TEXT,
+      dateReturned TEXT
+    )`,
+    () => {
+      compData.forEach(({ comp_id, datePurchased, dateReturned }) => {
+        db.run(`INSERT INTO computers VALUES (
+            null,
+            "${datePurchased}",
+            "${dateReturned}"
+        )`);
+      }
+    );
     }
   );
 });
