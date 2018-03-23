@@ -1,11 +1,11 @@
 const sqlite3 = require("sqlite3").verbose();
-const db = new sqlite3.Database("bangazon.sqlite");
+const db = new sqlite3.Database("./db/bangazon.sqlite");
 const { readFileSync } = require("fs");
 const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
-const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"))
+const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
 
-db.serialize(function() { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
+db.serialize(function () { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
   db.run(`DROP TABLE IF EXISTS products`);
   console.log(1);
   db.run(
@@ -69,29 +69,33 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
       );
     }
   );
-  db.run(`DROP TABLE IF EXISTS PaymentTypes`);
+  db.run(`DROP TABLE IF EXISTS Payment_Types`);
   db.run(
-    `CREATE TABLE IF NOT EXISTS PaymentTypes (
-      PaymentTypeID INTEGER PRIMARY KEY, 
+    `CREATE TABLE IF NOT EXISTS Payment_Types (
+      PaymentTypeID INTEGER PRIMARY KEY,
+      payment_type TEXT,
       account_number INT,
       customer_id INT
     )`,
-  () => {
-    console.log(3);
-    payment_types.forEach( 
-      ({payment_type, 
-        account_number, 
-        customer_id
+    () => {
+      console.log(3);
+      paymentTypeData.forEach(
+        ({ 
+          paymentType_id,
+          payment_type,
+          account_number,
+          customer_id
       }) => {
-      db.run(`INSERT INTO PaymentTypes VALUES (
+          db.run(`INSERT INTO Payment_Types VALUES (
+          null,
         "${payment_type}", 
         "${account_number}", 
         "${customer_id}"
       )`);
-  }
-);
-  }
-);
-
+        }
+      );
+    }
+  );
+});
 
 

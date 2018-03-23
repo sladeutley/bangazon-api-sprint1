@@ -18,7 +18,7 @@ let prodStream = createWriteStream(`./data/faker/products.json`);
 prodStream.write(JSON.stringify(products));
 
 //creating payment type JSON
-let payments = generatePaymentTypes();
+let payments = generatePaymentTypes(customers.length);
 let paymentStream = createWriteStream(`./data/faker/payment-types.json`);
 paymentStream.write(JSON.stringify(payments));
 
