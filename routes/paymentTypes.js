@@ -4,13 +4,16 @@ const { Router } = require("express");
 const router = Router();
 const {
   getPaymentTypes,
-  getOnePaymentType
+  getOnePaymentType,
+  addPaymentType,
+  editPaymentType,
+  deleteOnePaymentType
 } = require("../controllers/paymentTypeCtrl");
 
 router.get("/paymentTypes", getPaymentTypes);
 router.get("/paymentTypes/:id", getOnePaymentType);
-router.put("/paymentTypes/:id", editNewPaymentType)
 router.post("/paymentTypes", addPaymentType);
-router.delete("/paymentTypes/:id", deletePaymentType);
+router.put("/paymentTypes/:id", editPaymentType);
+router.delete("/paymentTypes/:id", deleteOnePaymentType);
 
 module.exports = router;
