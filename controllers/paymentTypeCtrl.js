@@ -2,17 +2,18 @@
 
 const {
   getAllPaymentTypes,
-  getOnePaymentType,
+  getSinglePaymentType,
   addNewPaymentType,
-  editPaymentType
-  deleteOnePaymentType
+  editOnePaymentType,
+  deleteSinglePaymentType
 } = require("../models/paymentTypes");
+const {Data} = require ("../models/paymentTypes");
 
 //Get all Payment Types
 module.exports.getPaymentTypes = (req, res, next) => {
   getAllPaymentTypes()
-    .then(Data => {
-      res.status(200).json(Data);
+    .then(Datas => {
+      res.status(200).json(Datas);
     })
     .catch(err => {
       next(err);
@@ -21,7 +22,7 @@ module.exports.getPaymentTypes = (req, res, next) => {
 
 //Get One Payment Type
 module.exports.getOnePaymentType = ({ params: { id } }, res, next) => {
-  getOnePaymentType(id)
+  getSinglePaymentType(id)
     .then(Data => {
       res.status(200).json(Data);
     })
@@ -29,8 +30,8 @@ module.exports.getOnePaymentType = ({ params: { id } }, res, next) => {
 };
 
 //Delete One Payment Type
-module.exports.deletePaymentType = ({ params: { id } }, res, next) => {
-  deleteOnePaymentType(id)
+module.exports.deleteOnePaymentType = ({ params: { id } }, res, next) => {
+  deleteSinglePaymentType(id)
     .then(Data => {
       res.status(200).json(Data);
     })
@@ -38,8 +39,8 @@ module.exports.deletePaymentType = ({ params: { id } }, res, next) => {
 };
 
 //Add New Payment Type
-module.exports.addNewPaymentType = (req, res, next) => {
-  console.log('req.body',req.body);
+module.exports.addPaymentType = (req, res, next) => {
+  console.log('req.body', req.body);
   addNewPaymentType(req.body)
     .then(Data => {
       res.status(200).json(Data);
@@ -47,9 +48,9 @@ module.exports.addNewPaymentType = (req, res, next) => {
     .catch(err => next(err));
 };
 
-
+//Edit Payment Type
 module.exports.editPaymentType = (req, res, next) => {
-  editPaymentType(req.body, req.params.id)
+  editOnePaymentType(req.params.id, req.body)
     .then(Data => {
       res.status(200).json(Data);
     })
