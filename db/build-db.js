@@ -5,6 +5,7 @@ const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
 const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
+const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.json"));
 
 db.serialize(function() { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
   db.run(`DROP TABLE IF EXISTS products`);
@@ -139,5 +140,29 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
         }
       );
     }
-  )
+  );
+  db.run(`DROP TABLE IF EXISTS trainingPrograms`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS trainingPrograms (
+      trainingProgram_id INTEGER PRIMARY KEY,
+      programName TEXT,
+      startDate TEXT,
+      endDate TEXT
+    )`, 
+    () => {
+      trainingProgData.forEach( 
+        ({
+          trainingProgram_id,
+          progName,
+          progStartDate,
+          progEndDate
+        }) => {
+          db.run(`INSERT INTO trainingPrograms VALUES (
+            null,
+            "${progName}",
+            "${progStartDate}",
+            "${progEndDate}"
+          )`);
+        });
+    });
 });

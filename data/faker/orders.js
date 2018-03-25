@@ -1,4 +1,4 @@
-// use Faker to generate product types and products data
+// use Faker to generate order data
 'use strict';
 
 const faker = require("faker");
