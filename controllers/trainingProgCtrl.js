@@ -3,7 +3,7 @@
 const { getAll, getOne, addOne, editOne, deleteOne } = require('../models/TrainingProg');
 const TrainingProg = require("../models/TrainingProg");
 
-// Get all orders
+// Get all training programs
 module.exports.getAllPrograms = (req, res, next) => {
   getAll()
     .then(programs => {
@@ -14,7 +14,7 @@ module.exports.getAllPrograms = (req, res, next) => {
     });
 };
 
-// Get one order
+// Get one training program
 module.exports.getOneProgram = ({ params: { id } }, res, next) => {
   TrainingProg.getOne(id)
     .then(program => {
@@ -28,7 +28,7 @@ module.exports.getOneProgram = ({ params: { id } }, res, next) => {
     .catch(err => next(err));
 };
 
-// Post one order
+// Post one training program
 module.exports.addOneProgram = (req, res, next) => {
   addOne(req.body)
     .then(program => {
@@ -37,7 +37,7 @@ module.exports.addOneProgram = (req, res, next) => {
     .catch(err => next(err));
 };
 
-// Put/edit one order
+// Put/edit one training program
 module.exports.editProgram = (req, res, next) => {
   editOne(req.params.id, req.body)
     .then(programs => {
@@ -46,7 +46,7 @@ module.exports.editProgram = (req, res, next) => {
     .catch(err => next(err));
 };
 
-// Delete one order
+// Delete one training program
 module.exports.deleteProgram = (req, res, next) => {
   deleteOne(req.params.id)
     .then(program => {

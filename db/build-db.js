@@ -145,9 +145,9 @@ db.serialize(function() { //want db.serialize for pc users does each 'db.run' on
   db.run(
     `CREATE TABLE IF NOT EXISTS trainingPrograms (
       trainingProgram_id INTEGER PRIMARY KEY,
-      programName TEXT,
-      startDate TEXT,
-      endDate TEXT
+      progName TEXT,
+      progStartDate TEXT,
+      progEndDate TEXT
     )`, 
     () => {
       trainingProgData.forEach( 

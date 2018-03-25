@@ -2,7 +2,7 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./db/bangazon.sqlite');
 
-// Get all orders
+// Get all training programs
 module.exports.getAll = () => {
   return new Promise((resolve, reject) => {
     db.all(`SELECT * FROM trainingPrograms`, (err, programs) => {
@@ -12,7 +12,7 @@ module.exports.getAll = () => {
   });
 };
 
-// Get one order by order ID
+// Get one training program by ID
 module.exports.getOne = id => {
   return new Promise((resolve, reject) => {
     db.get(
@@ -26,7 +26,7 @@ module.exports.getOne = id => {
   });
 };
 
-// POST an order
+// POST a training program
 module.exports.addOne = ({
   progName,
   progStartDate,
@@ -44,7 +44,7 @@ module.exports.addOne = ({
   });
 };
 
-// Edit an order by order ID
+// Edit a training program by ID
 module.exports.editOne = (id, {
   progName,
   progStartDate,
@@ -54,9 +54,9 @@ module.exports.editOne = (id, {
     db.run(
       `UPDATE trainingPrograms
       SET
-      programName = "${progName}",
-      startDate = "${progStartDate}",
-      endDate = "${progEndDate}" WHERE trainingProgram_id = ${id}`,
+      progName = "${progName}",
+      progStartDate = "${progStartDate}",
+      progEndDate = "${progEndDate}" WHERE trainingProgram_id = ${id}`,
       (err, programs) => {
         if (err) return reject(err);
         resolve(programs);
@@ -65,7 +65,7 @@ module.exports.editOne = (id, {
   });
 };
 
-// Delete order by order ID
+// Delete training program by ID
 module.exports.deleteOne = id => {
   return new Promise((resolve, reject) => {
     db.run(
