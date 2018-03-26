@@ -10,6 +10,7 @@ router.use(require('./orders'));
 router.use(require('./paymentTypes'));
 router.use(require('./products'));
 router.use(require('./trainingProgs'));
+router.use(require('./computers'));
 
 
 module.exports = router;
