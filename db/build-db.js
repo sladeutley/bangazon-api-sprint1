@@ -4,6 +4,7 @@ const { readFileSync } = require("fs");
 const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
+const employeeData = JSON.parse(readFileSync("./data/faker/employees.json"));
 const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
 const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.json"));
 const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
@@ -53,6 +54,7 @@ db.serialize(function() {
       );
     }
   );
+//-------------------------CREATE CUSTOMERS DB---------------------
 
   db.run(`DROP TABLE IF EXISTS customers`);
   db.run(
@@ -92,12 +94,62 @@ db.serialize(function() {
         "${addressStreet}",
         "${addressCity}",
         "${addressState}",
-        ${addressZip}
+        ${addressZip})`);
+        }
+      );
+    }
+  );
+//-------------------------CREATE EMPLOYEES DB---------------------
+  db.run(`DROP TABLE IF EXISTS employees`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS employees (
+    employee_id INTEGER PRIMARY KEY,
+    job_title TEXT,
+    supervisor TEXT,
+    first_name TEXT,
+    last_name TEXT,
+    work_email TEXT,
+    addressStreet TEXT,
+    addressCity TEXT,
+    addressState TEXT,
+    addressZip TEXT,
+    dept_id INTEGER,
+    FOREIGN KEY (dept_id) REFERENCES department(dept_id)
+  )`,
+    () => {
+      employeeData.forEach(
+        ({
+          employee_id,
+          job_title,
+          supervisor,
+          first_name,
+          last_name,
+          work_email,
+          addressStreet,
+          addressCity, 
+          addressState,
+          addressZip,
+          dept_id
+        }) => {
+          db.run(`INSERT INTO employees VALUES (
+        null,
+        "${job_title}",
+        "${supervisor}",
+        "${first_name}",
+        "${last_name}",
+        "${work_email}",
+        "${addressStreet}",
+        "${addressCity}",
+        "${addressState}",
+        "${addressZip}",
+        ${dept_id}
       )`);
         }
       );
     }
   );
+
+//-------------------------CREATE ORDERS DB---------------------
 
   db.run(`DROP TABLE IF EXISTS orders`);
   db.run(
