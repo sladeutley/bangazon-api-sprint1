@@ -86,8 +86,6 @@ module.exports.deleteOne = id => {
 //add Products to Order
 module.exports.addProductToOrder = (id) => {
     return new Promise( (resolve, reject) => {
-      console.log('testing adding product');
-      console.log('this', id);
         db.run(`INSERT INTO OrderProducts (order_id, product_id) VALUES (${id}, 
           ${product_id})`, (err, data) => {
         if (err) return reject(err);
