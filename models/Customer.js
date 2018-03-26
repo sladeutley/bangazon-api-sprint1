@@ -82,13 +82,15 @@ module.exports.editCust = (
   });
 };
 
+// only want customers whose id's dont exist on orders table
 module.exports.getCustomersWhoDontBuyStuff = () => {
   return new Promise((resolve, reject) => {
     db.all(
-      `SELECT * FROM customers
+      `SELECT customers.* 
+						FROM customers
 						LEFT JOIN orders
 						ON customers.customer_id = orders.customer_id
-						WHERE orders.customer_id = null`,
+						WHERE orders.customer_id is null`,
       (err, cust) => {
         if (err) return reject(err);
         resolve(cust);

@@ -1,15 +1,23 @@
 'use strict';
 const { getAll } = require('../models/Customer');
 const { getOne } = require('../models/Customer');
-const { addOneCustomer, editCust } = require('../models/Customer');
+const { addOneCustomer, editCust, getCustomersWhoDontBuyStuff } = require('../models/Customer');
 
+// if query params of 'customers/?active=false is there, only get customers who don't buy stuff, otherwise get all customers
 module.exports.getAllCustomers = (req, res, next) => {
-  console.log('req.query',req.query.active);
-    getAll()
-    .then( (cust) => {
+  if ((req.query.active = "false")) {
+    getCustomersWhoDontBuyStuff()
+      .then(cust => {
         res.status(200).json(cust);
-    })
-    .catch( (err) => next(err));
+      })
+      .catch(err => next(err));
+  } else {
+    getAll()
+      .then(cust => {
+        res.status(200).json(cust);
+      })
+      .catch(err => next(err));
+  }
 };
 
 module.exports.getOneCustomer = (req, res, next) => {
