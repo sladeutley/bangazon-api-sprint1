@@ -1,8 +1,9 @@
 const { createWriteStream } = require('fs'); 
 const { generateCustomers } = require('../data/faker/customers'); 
-const productTypes = require('../data/prod-types'); 
+const { generateEmployees } = require('../data/faker/employees'); 
 const { generateProducts } = require('../data/faker/products');
 const { generateOrders } = require('../data/faker/orders');
+const productTypes = require('../data/prod-types'); 
 
 // creating customer JSON
 let customers = generateCustomers();
@@ -18,3 +19,8 @@ prodStream.write(JSON.stringify(products));
 let orders = generateOrders(products.length, customers.length);
 let orderStream = createWriteStream(`./data/faker/orders.json`);
 orderStream.write(JSON.stringify(orders));
+
+// creating employees JSON
+let workers = generateEmployees();
+let employeeStream = createWriteStream(`./data/faker/employees.json`);
+employeeStream.write(JSON.stringify(workers));

@@ -4,10 +4,12 @@ const { readFileSync } = require("fs");
 const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
-
+const employeeData = JSON.parse(readFileSync("./data/faker/employees.json"));
 
 
 db.serialize(function () { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
+  
+//-------------------------CREATE PRODUCTS DB---------------------
   db.run(`DROP TABLE IF EXISTS products`);
   db.run(
     `CREATE TABLE IF NOT EXISTS products (
@@ -48,9 +50,9 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
       );
     }
   );
+//-------------------------CREATE CUSTOMERS DB---------------------
 
   db.run(`DROP TABLE IF EXISTS customers`);
-  console.log(3);
   db.run(
     `CREATE TABLE IF NOT EXISTS customers (
     customer_id INTEGER PRIMARY KEY,
@@ -65,7 +67,6 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
     addressZip INTEGER
   )`,
     () => {
-      console.log(4);
       custData.forEach(
         ({
           customer_id,
@@ -89,15 +90,66 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
         "${addressStreet}",
         "${addressCity}",
         "${addressState}",
-        ${addressZip}
+        ${addressZip})`);
+        }
+      );
+    }
+  );
+//-------------------------CREATE EMPLOYEES DB---------------------
+  db.run(`DROP TABLE IF EXISTS employees`);
+  console.log("emp-5");
+  db.run(
+    `CREATE TABLE IF NOT EXISTS employees (
+    employee_id INTEGER PRIMARY KEY,
+    job_title TEXT,
+    supervisor TEXT,
+    first_name TEXT,
+    last_name TEXT,
+    work_email TEXT,
+    addressStreet TEXT,
+    addressCity TEXT,
+    addressState TEXT,
+    addressZip TEXT,
+    dept_id INTEGER,
+    FOREIGN KEY (dept_id) REFERENCES department(dept_id)
+  )`,
+    () => {
+      console.log("emp-6");      
+      employeeData.forEach(
+        ({
+          employee_id,
+          job_title,
+          supervisor,
+          first_name,
+          last_name,
+          work_email,
+          addressStreet,
+          addressCity, 
+          addressState,
+          addressZip,
+          dept_id
+        }) => {
+          db.run(`INSERT INTO employees VALUES (
+        null,
+        "${job_title}",
+        "${supervisor}",
+        "${first_name}",
+        "${last_name}",
+        "${work_email}",
+        "${addressStreet}",
+        "${addressCity}",
+        "${addressState}",
+        "${addressZip}",
+        ${dept_id}
       )`);
         }
       );
     }
   );
 
+//-------------------------CREATE ORDERS DB---------------------
+
   db.run(`DROP TABLE IF EXISTS orders`);
-  console.log(5);
   db.run(
     `CREATE TABLE IF NOT EXISTS orders (
     order_id INTEGER PRIMARY KEY,
@@ -121,7 +173,5 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
       )`);
         }
       );
-
     })
-
 });
