@@ -1,7 +1,7 @@
 {
   "name": "bangazon-api-sprint1",
   "version": "1.0.0",
-  "description": "",
+  "description": "NPM INSTALLS:",
   "main": "index.js",
   "scripts": {
     "data:generate": "node db/build-data.js",
@@ -28,5 +28,6 @@
     "nodemon": "^1.17.2",
     "npm": "^5.7.1",
     "sqlite3": "^4.0.0"
-  }
+  },
+  "devDependencies": {}
 }

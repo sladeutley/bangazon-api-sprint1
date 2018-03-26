@@ -3,12 +3,9 @@
 
 const { Router } = require('express');
 const router = Router();
-const { getAllDepartments } = require('../controllers/departmentsCtrl.js');
+const { getAllDepartments, getOneDepartment } = require('../controllers/departmentCtrl.js');
 
-router.get('/departments', getAllDepartments);
-// router.get('/product-types/:id', getSpecProductType);
-// router.post('/product-types', addOneProductType);
-// router.put('/product-types/:id', editProductTypeInfo);
-// router.delete('/product-types/:id', deleteProductTypeInfo);
+router.get(`/departments`, getAllDepartments);
+router.get(`/departments/:id`, getOneDepartment);
 
 module.exports = router;

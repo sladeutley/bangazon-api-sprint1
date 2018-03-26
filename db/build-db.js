@@ -9,7 +9,7 @@ const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
 const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.json"));
 const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
 const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
-const departments = JSON.parse(readFileSync("./data/departments.json"));
+const departmentData = JSON.parse(readFileSync("./data/departments.json"));
 
 
 
@@ -225,13 +225,7 @@ db.serialize(function() {
       progEndDate TEXT
     )`, 
     () => {
-      trainingProgData.forEach( 
-        ({
-          trainingProgram_id,
-          progName,
-          progStartDate,
-          progEndDate
-        }) => {
+      trainingProgData.forEach(({ progName, progStartDate, progEndDate }) => {
           db.run(`INSERT INTO trainingPrograms VALUES (
             null,
             "${progName}",
@@ -270,20 +264,16 @@ db.serialize(function() {
       budget INTEGER
     )`, 
     () => {
-      departments.forEach( 
-        ({
-          department_id,
-          name,
-          budget
-        }) => {
-          db.run(`INSERT INTO trainingPrograms VALUES (
+      departmentData.forEach( 
+        ({ department_id, name, budget }) => {
+          db.run(`INSERT INTO departments VALUES (
             null,
             "${name}",
             "${budget}"
           )`);
         });
     });
-  });
+});
 
 
 

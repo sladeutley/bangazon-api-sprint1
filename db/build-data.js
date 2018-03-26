@@ -31,6 +31,7 @@ orderStream.write(JSON.stringify(orders));
 let workers = generateEmployees();
 let employeeStream = createWriteStream(`./data/faker/employees.json`);
 employeeStream.write(JSON.stringify(workers));
+
 //create payment JSON
 let payments = generatePaymentTypes(customers.length);
 let paymentStream = createWriteStream(`./data/faker/payment-types.json`);
