@@ -4,6 +4,7 @@ const { getOne } = require('../models/Customer');
 const { addOneCustomer, editCust } = require('../models/Customer');
 
 module.exports.getAllCustomers = (req, res, next) => {
+  console.log('req.query',req.query.active);
     getAll()
     .then( (cust) => {
         res.status(200).json(cust);

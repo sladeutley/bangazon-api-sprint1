@@ -16,6 +16,7 @@ module.exports.generateCustomers = () => {
     let addressCity = faker.address.city();
     let addressState = faker.address.state();
     let addressZip = faker.address.zipCode();
+    //IF a cust_id matches one that exists on orders, set isActive to true
 
     customers.push({
       "first_name": firstName,
