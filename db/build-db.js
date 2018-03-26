@@ -5,8 +5,11 @@ const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
 const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
+const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.json"));
 const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
 const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
+
+
 
 db.serialize(function() {
   //want db.serialize for pc users does each 'db.run' one by one until each one is finished
@@ -134,7 +137,6 @@ db.serialize(function() {
       });
     }
   );
-
   db.run(`DROP TABLE IF EXISTS Payment_Types`);
   db.run(
     `CREATE TABLE IF NOT EXISTS Payment_Types (
@@ -156,23 +158,50 @@ db.serialize(function() {
       );
     }
   );
-
-  db.run(`DROP TABLE IF EXISTS computers`);
+  db.run(`DROP TABLE IF EXISTS trainingPrograms`);
   db.run(
-    `CREATE TABLE IF NOT EXISTS computers (
-      comp_id INTEGER PRIMARY KEY,
-      datePurchased TEXT,
-      dateReturned TEXT
-    )`,
+    `CREATE TABLE IF NOT EXISTS trainingPrograms (
+      trainingProgram_id INTEGER PRIMARY KEY,
+      progName TEXT,
+      progStartDate TEXT,
+      progEndDate TEXT
+    )`, 
     () => {
-      compData.forEach(({ comp_id, datePurchased, dateReturned }) => {
-        db.run(`INSERT INTO computers VALUES (
+      trainingProgData.forEach( 
+        ({
+          trainingProgram_id,
+          progName,
+          progStartDate,
+          progEndDate
+        }) => {
+          db.run(`INSERT INTO trainingPrograms VALUES (
             null,
-            "${datePurchased}",
-            "${dateReturned}"
-        )`);
+            "${progName}",
+            "${progStartDate}",
+            "${progEndDate}"
+          )`);
+        });
+    });
+    db.run(`DROP TABLE IF EXISTS computers`);
+    db.run(
+      `CREATE TABLE IF NOT EXISTS computers (
+        comp_id INTEGER PRIMARY KEY,
+        datePurchased TEXT,
+        dateReturned TEXT
+      )`,
+      () => {
+        compData.forEach(({ comp_id, datePurchased, dateReturned }) => {
+          db.run(`INSERT INTO computers VALUES (
+              null,
+              "${datePurchased}",
+              "${dateReturned}"
+          )`);
+        }
+      );
       }
     );
-    }
-  );
-});
+  });
+
+
+
+

@@ -4,7 +4,10 @@ const productTypes = require('../data/prod-types');
 const { generateProducts } = require('../data/faker/products');
 const { generateOrders } = require('../data/faker/orders');
 const { generatePaymentTypes} = require('../data/faker/payment-types');
+const { generateTrainingPrograms } = require('../data/faker/trainingProg');
 const { generateComputers} = require('../data/faker/computers')
+
+
 
 // creating customer JSON
 let customers = generateCustomers();
@@ -27,8 +30,14 @@ let payments = generatePaymentTypes(customers.length);
 let paymentStream = createWriteStream(`./data/faker/payment-types.json`);
 paymentStream.write(JSON.stringify(payments));
 
+// create training programs JSON
+let trainingProgs = generateTrainingPrograms();
+let trainingProgStream = createWriteStream(`./data/faker/trainingProgs.json`);
+trainingProgStream.write(JSON.stringify(trainingProgs));
+
 //create computers JSON
 let computers = generateComputers();
 let compStream = createWriteStream(`./data/faker/computers.json`);
 compStream.write(JSON.stringify(computers));
+
 
