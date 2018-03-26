@@ -9,6 +9,7 @@ const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
 const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.json"));
 const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
 const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
+const empTrainJoinData = JSON.parse(readFileSync("./data/faker/empTrain.json"));
 
 
 
@@ -105,14 +106,13 @@ db.serialize(function() {
     `CREATE TABLE IF NOT EXISTS employees (
     employee_id INTEGER PRIMARY KEY,
     job_title TEXT,
-    supervisor TEXT,
     first_name TEXT,
     last_name TEXT,
     work_email TEXT,
     addressStreet TEXT,
     addressCity TEXT,
     addressState TEXT,
-    addressZip TEXT,
+    addressZip INTEGER,
     dept_id INTEGER,
     FOREIGN KEY (dept_id) REFERENCES department(dept_id)
   )`,
@@ -121,7 +121,6 @@ db.serialize(function() {
         ({
           employee_id,
           job_title,
-          supervisor,
           first_name,
           last_name,
           work_email,
@@ -141,7 +140,7 @@ db.serialize(function() {
         "${addressStreet}",
         "${addressCity}",
         "${addressState}",
-        "${addressZip}",
+        ${addressZip},
         ${dept_id}
       )`);
         }
@@ -252,7 +251,35 @@ db.serialize(function() {
       );
       }
     );
-  });
+  
+
+//-------------------------JOIN TABLES---------------------
+
+//------------EMPLOYEES || TRAINING--------------
+
+  db.run(`CREATE TABLE IF NOT EXISTS employees_training (
+  employee_id INTEGER NOT NULL,
+  trainingProgram_id INTEGER NOT NULL,
+  PRIMARY KEY(employee_id, trainingProgram_id),
+  FOREIGN KEY(employee_id) REFERENCES employees(id) ON DELETE CASCADE,
+  FOREIGN KEY(trainingProgram_id) REFERENCES trainingPrograms(id) ON DELETE CASCADE
+)`, () => {
+      console.log('created EMP_TRAIN JOIN');
+      empTrainJoinData.forEach(
+        ({
+          employee_id,
+          trainingProgram_id
+        }) => {
+          db.run(`INSERT INTO employees_training VALUES (
+            ${employee_id},
+            ${trainingProgram_id}
+          )`);
+        }
+      )
+    }
+  );
+});
+
 
 
 

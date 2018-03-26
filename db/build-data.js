@@ -7,7 +7,7 @@ const productTypes = require('../data/prod-types');
 const { generatePaymentTypes} = require('../data/faker/payment-types');
 const { generateTrainingPrograms } = require('../data/faker/trainingProg');
 const { generateComputers} = require('../data/faker/computers')
-
+const { createEmpTrainData } = require('../data/faker/emp_training.js');
 
 
 // creating customer JSON
@@ -45,4 +45,7 @@ let computers = generateComputers();
 let compStream = createWriteStream(`./data/faker/computers.json`);
 compStream.write(JSON.stringify(computers));
 
-
+//------------Build Employee Join Table
+let empTrainJoin = createEmpTrainData();
+let empTrainStream = createWriteStream(`./data/faker/empTrain.json`);
+empTrainStream.write(JSON.stringify(empTrainJoin));
