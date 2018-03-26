@@ -23,7 +23,6 @@ module.exports.getOneCustomer = (req, res, next) => {
   };
 
   module.exports.addOneCustomer = (req, res, next) => {
-  console.log('req.body',req.body);
   addOneCustomer(req.body)
     .then(cust => {
       res.status(200).json(cust);
@@ -33,7 +32,6 @@ module.exports.getOneCustomer = (req, res, next) => {
 
 module.exports.editCust = (req, res, next) => {
   let custId= req.params.custId;
-  console.log('req.body',req.body);
   editCust(custId, req.body)
     .then(cust => {
       res.status(200).json(cust);

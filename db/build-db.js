@@ -5,11 +5,15 @@ const prodData = JSON.parse(readFileSync("./data/faker/products.json"));
 const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
 const employeeData = JSON.parse(readFileSync("./data/faker/employees.json"));
+const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
+const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.json"));
+const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
+const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
 
 
-db.serialize(function () { //want db.serialize for pc users does each 'db.run' one by one until each one is finished
-  
-//-------------------------CREATE PRODUCTS DB---------------------
+
+db.serialize(function() {
+  //want db.serialize for pc users does each 'db.run' one by one until each one is finished
   db.run(`DROP TABLE IF EXISTS products`);
   db.run(
     `CREATE TABLE IF NOT EXISTS products (
@@ -155,14 +159,10 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
     paymentType_id INTEGER,
     customer_id INTEGER,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
-    )`, () => {
+    )`,
+    () => {
       orderData.forEach(
-        ({
-          order_id,
-          transactionDate,
-          paymentType_id,
-          customer_id
-        }) => {
+        ({ order_id, transactionDate, paymentType_id, customer_id }) => {
           db.run(`INSERT INTO orders VALUES (
         null,
         "${transactionDate}",
@@ -171,5 +171,89 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
       )`);
         }
       );
-    })
-});
+    }
+  );
+
+  db.run(`DROP TABLE IF EXISTS productTypes`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS productTypes (
+      prodType_id INTEGER PRIMARY KEY,
+      title TEXT
+    )`,
+    () => {
+      prodTypeData.forEach(({ prodType_id, title }) => {
+        db.run(`INSERT INTO productTypes VALUES (
+        null,
+        "${title}"
+      )`);
+      });
+    }
+  );
+  db.run(`DROP TABLE IF EXISTS Payment_Types`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS Payment_Types (
+      PaymentTypeID INTEGER PRIMARY KEY,
+      payment_type TEXT,
+      account_number INT,
+      customer_id INT
+    )`,
+    () => {
+      paymentTypeData.forEach(
+        ({ paymentType_id, payment_type, account_number, customer_id }) => {
+          db.run(`INSERT INTO Payment_Types VALUES (
+          null,
+        "${payment_type}", 
+        "${account_number}", 
+        "${customer_id}"
+      )`);
+        }
+      );
+    }
+  );
+  db.run(`DROP TABLE IF EXISTS trainingPrograms`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS trainingPrograms (
+      trainingProgram_id INTEGER PRIMARY KEY,
+      progName TEXT,
+      progStartDate TEXT,
+      progEndDate TEXT
+    )`, 
+    () => {
+      trainingProgData.forEach( 
+        ({
+          trainingProgram_id,
+          progName,
+          progStartDate,
+          progEndDate
+        }) => {
+          db.run(`INSERT INTO trainingPrograms VALUES (
+            null,
+            "${progName}",
+            "${progStartDate}",
+            "${progEndDate}"
+          )`);
+        });
+    });
+    db.run(`DROP TABLE IF EXISTS computers`);
+    db.run(
+      `CREATE TABLE IF NOT EXISTS computers (
+        comp_id INTEGER PRIMARY KEY,
+        datePurchased TEXT,
+        dateReturned TEXT
+      )`,
+      () => {
+        compData.forEach(({ comp_id, datePurchased, dateReturned }) => {
+          db.run(`INSERT INTO computers VALUES (
+              null,
+              "${datePurchased}",
+              "${dateReturned}"
+          )`);
+        }
+      );
+      }
+    );
+  });
+
+
+
+

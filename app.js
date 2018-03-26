@@ -11,7 +11,10 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use("/api/v1", routes);
 
+
 // TODO: Add error handler
+// Error Handler
+
 app.use((req, res, next) => {
   let err = new Error("Resource Not Found");
   console.log("404 handler");
