@@ -5,7 +5,10 @@ const db = new sqlite3.Database('./db/bangazon.sqlite');
 // Get all orders
 module.exports.getAll = () => {
   return new Promise((resolve, reject) => {
-    db.all(`SELECT * FROM orders`, (err, orders) => {
+    db.all(`SELECT Orders.*,Products.* FROM orders
+    JOIN OrderProducts ON Orders.order_id = OrderProducts.order_id
+    JOIN Products ON Products.prod_id = OrderProducts.product_id`
+    , (err, orders) => {
       if (err) return reject(err);
       resolve(orders);
     });
@@ -16,7 +19,9 @@ module.exports.getAll = () => {
 module.exports.getOne = id => {
   return new Promise((resolve, reject) => {
     db.get(
-      `SELECT * FROM orders
+      `SELECT Orders.*,Products.* FROM orders
+      JOIN OrderProducts ON Orders.order_id = OrderProducts.order_id 
+      JOIN Products ON Products.prod_id = OrderProducts.product_id
       WHERE orders.order_id = ${id}`,
       (err, order) => {
         if (err) return reject(err);
@@ -77,4 +82,15 @@ module.exports.deleteOne = id => {
       }
     );
   });
+
+//add Products to Order
+module.exports.addProductToOrder = (id) => {
+    return new Promise( (resolve, reject) => {
+        db.run(`INSERT INTO OrderProducts (order_id, product_id) VALUES (${id}, 
+          ${product_id})`, (err, data) => {
+        if (err) return reject(err);
+        resolve(data);
+      });
+    });
+}
 };
