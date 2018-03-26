@@ -1,130 +1,127 @@
-<<<<<<< HEAD
 [
-    {
-        "customer_id": 41,
-        "transactionDate": "2018-02-01",
-        "paymentType_id": 90441
-    },
-    {
-        "customer_id": 35,
-        "transactionDate": "2017-12-04",
-        "paymentType_id": 94208
-    },
-    {
-        "customer_id": 37,
-        "transactionDate": "2018-03-10",
-        "paymentType_id": 80437
-    },
-    {
-        "customer_id": 48,
-        "transactionDate": "2017-04-05",
-        "paymentType_id": 12675
-    },
-    {
-        "customer_id": 3,
-        "transactionDate": "2017-12-03",
-        "paymentType_id": 67539
-    },
-    {
-        "customer_id": 6,
-        "transactionDate": "2018-03-06",
-        "paymentType_id": 30015
-    },
-    {
-        "customer_id": 13,
-        "transactionDate": "2017-09-12",
-        "paymentType_id": 4607
-    },
-    {
-        "customer_id": 19,
-        "transactionDate": "2017-06-02",
-        "paymentType_id": 12412
-    },
-    {
-        "customer_id": 25,
-        "transactionDate": "2017-06-08",
-        "paymentType_id": 12681
-    },
-    {
-        "customer_id": 38,
-        "transactionDate": "2017-04-16",
-        "paymentType_id": 61492
-    },
-    {
-        "customer_id": 49,
-        "transactionDate": "2017-11-03",
-        "paymentType_id": 83480
-    },
-    {
-        "customer_id": 48,
-        "transactionDate": "2017-08-20",
-        "paymentType_id": 87003
-    },
-    {
-        "customer_id": 24,
-        "transactionDate": "2017-09-20",
-        "paymentType_id": 38082
-    },
-    {
-        "customer_id": 5,
-        "transactionDate": "2017-12-10",
-        "paymentType_id": 52658
-    },
-    {
-        "customer_id": 6,
-        "transactionDate": "2017-09-02",
-        "paymentType_id": 7194
-    },
-    {
-        "customer_id": 47,
-        "transactionDate": "2017-12-11",
-        "paymentType_id": 73581
-    },
-    {
-        "customer_id": 50,
-        "transactionDate": "2017-10-15",
-        "paymentType_id": 7857
-    },
-    {
-        "customer_id": 34,
-        "transactionDate": "2017-11-05",
-        "paymentType_id": 93187
-    },
-    {
-        "customer_id": 10,
-        "transactionDate": "2017-09-15",
-        "paymentType_id": 19902
-    },
-    {
-        "customer_id": 15,
-        "transactionDate": "2018-01-22",
-        "paymentType_id": 34072
-    },
-    {
-        "customer_id": 47,
-        "transactionDate": "2017-06-19",
-        "paymentType_id": 44230
-    },
-    {
-        "customer_id": 20,
-        "transactionDate": "2017-11-25",
-        "paymentType_id": 55814
-    },
-    {
-        "customer_id": 47,
-        "transactionDate": "2017-07-07",
-        "paymentType_id": 56684
-    },
-    {
-        "customer_id": 49,
-        "transactionDate": "2018-02-02",
-        "paymentType_id": 12928
-    },
-    {
-        "customer_id": 11,
-        "transactionDate": "2017-09-23",
-        "paymentType_id": 99841
-    }
+  {
+    "customer_id": 40,
+    "transactionDate": "2018-01-15",
+    "paymentType_id": 20865
+  },
+  {
+    "customer_id": 25,
+    "transactionDate": "2017-11-09",
+    "paymentType_id": 38044
+  },
+  {
+    "customer_id": 26,
+    "transactionDate": "2017-11-12",
+    "paymentType_id": 79018
+  },
+  {
+    "customer_id": 30,
+    "transactionDate": "2018-01-19",
+    "paymentType_id": 62983
+  },
+  {
+    "customer_id": 4,
+    "transactionDate": "2017-04-29",
+    "paymentType_id": 40002
+  },
+  {
+    "customer_id": 8,
+    "transactionDate": "2017-08-03",
+    "paymentType_id": 11150
+  },
+  {
+    "customer_id": 42,
+    "transactionDate": "2017-12-23",
+    "paymentType_id": 58107
+  },
+  {
+    "customer_id": 46,
+    "transactionDate": "2017-12-08",
+    "paymentType_id": 90665
+  },
+  {
+    "customer_id": 33,
+    "transactionDate": "2017-05-09",
+    "paymentType_id": 28104
+  },
+  {
+    "customer_id": 5,
+    "transactionDate": "2018-03-26",
+    "paymentType_id": 75731
+  },
+  {
+    "customer_id": 23,
+    "transactionDate": "2017-09-01",
+    "paymentType_id": 94452
+  },
+  {
+    "customer_id": 47,
+    "transactionDate": "2017-07-04",
+    "paymentType_id": 39433
+  },
+  {
+    "customer_id": 34,
+    "transactionDate": "2017-09-09",
+    "paymentType_id": 66042
+  },
+  {
+    "customer_id": 6,
+    "transactionDate": "2017-05-13",
+    "paymentType_id": 67316
+  },
+  {
+    "customer_id": 5,
+    "transactionDate": "2017-11-27",
+    "paymentType_id": 49084
+  },
+  {
+    "customer_id": 37,
+    "transactionDate": "2017-04-24",
+    "paymentType_id": 67410
+  },
+  {
+    "customer_id": 35,
+    "transactionDate": "2017-09-07",
+    "paymentType_id": 82863
+  },
+  {
+    "customer_id": 50,
+    "transactionDate": "2017-06-18",
+    "paymentType_id": 13437
+  },
+  {
+    "customer_id": 31,
+    "transactionDate": "2017-12-02",
+    "paymentType_id": 78937
+  },
+  {
+    "customer_id": 49,
+    "transactionDate": "2018-01-04",
+    "paymentType_id": 80468
+  },
+  {
+    "customer_id": 48,
+    "transactionDate": "2017-11-02",
+    "paymentType_id": 44011
+  },
+  {
+    "customer_id": 49,
+    "transactionDate": "2018-02-01",
+    "paymentType_id": 96286
+  },
+  {
+    "customer_id": 22,
+    "transactionDate": "2017-07-27",
+    "paymentType_id": 75339
+  },
+  {
+    "customer_id": 11,
+    "transactionDate": "2017-08-05",
+    "paymentType_id": 32501
+  },
+  {
+    "customer_id": 16,
+    "transactionDate": "2017-08-26",
+    "paymentType_id": 91619
+  }
 ]
-=======
->>>>>>> master
