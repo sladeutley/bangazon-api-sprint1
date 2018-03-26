@@ -2,56 +2,67 @@
     {
         "department_id": "",
         "name": "tools",
+        "supervisor": 1,
         "budget": 500000
     },
     {
         "department_id": "",
         "name": "electronics",
+        "supervisor": 9,
         "budget": 120000
     },
     {
         "department_id": "",
         "name": "automotive",
+        "supervisor": 45,
         "budget": 1500000
     },
     {
         "department_id": "",
         "name": "jewelery",
+        "supervisor": 5,
         "budget": 13
     },
     {
         "department_id": "",
         "name": "games",
+        "supervisor": 32,
         "budget": 900000
     },
     {
         "department_id": "",
         "name": "garden",
+        "supervisor": 25,
         "budget": 2
     },
     {
         "department_id": "",
         "name": "books",
+        "supervisor": 11,
         "budget": -130000
     },
     {
         "department_id": "",
         "name": "industrial",
+        "supervisor": 27,
         "budget": 145400000
     },
     {
         "department_id": "",
         "name": "sports",
+        "supervisor": 22,
         "budget": 5000125
     },
     {
         "department_id": "",
         "name": "beauty",
+        "supervisor": 8,
         "budget": 67
     },
     {
         "department_id": "",
         "name": "health",
+        "supervisor": 13,
         "budget": 189956354
     }
 ]

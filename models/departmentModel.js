@@ -14,10 +14,38 @@ module.exports.getAll = () => {
 
 module.exports.getOne = id => {
   return new Promise ((resolve, reject) => {
-    db.all(`SELECT * FROM departments WHERE department_id = ${id} `,
+    db.get(`SELECT * FROM departments WHERE department_id = ${id} `,
     (err, departments) => {
       if (err) return reject(err);
       resolve(departments);
    });
+  });
+};
+
+module.exports.addOne = ({name, supervisor, budget}) => {
+  return new Promise ((resolve, reject)=>{
+    db.run(
+      `INSERT INTO departments
+       VALUES (null, "${name}", "${supervisor}", "${budget}")`,
+       (err, departments) => {
+          if (err) return reject(err);
+          resolve(departments);
+      });
+  })
+};
+
+module.exports.editOne = (id, {name, supervisor, budget}) => {
+  return new Promise((resolve, reject) => {
+  db.run(
+    `UPDATE departments SET 
+     name = "${name}",
+     supervisor = "${supervisor}",
+     budget = "${budget}"
+     WHERE department_id = ${id}`,
+     (err, departments) => {
+       if (err) return reject(err);
+       resolve(departments);
+      }
+    );
   });
 };

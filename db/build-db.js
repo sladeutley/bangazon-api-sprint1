@@ -261,14 +261,16 @@ db.serialize(function() {
     `CREATE TABLE IF NOT EXISTS departments (
       department_id INTEGER PRIMARY KEY,
       name TEXT,
+      supervisor INTEGER,
       budget INTEGER
     )`, 
     () => {
       departmentData.forEach( 
-        ({ department_id, name, budget }) => {
+        ({ department_id, name,supervisor, budget }) => {
           db.run(`INSERT INTO departments VALUES (
             null,
             "${name}",
+            "${supervisor}",
             "${budget}"
           )`);
         });
