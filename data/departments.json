@@ -1,0 +1,57 @@
+[
+    {
+        "department_id": "",
+        "name": "tools",
+        "budget": 500000
+    },
+    {
+        "department_id": "",
+        "name": "electronics",
+        "budget": 120000
+    },
+    {
+        "department_id": "",
+        "name": "automotive",
+        "budget": 1500000
+    },
+    {
+        "department_id": "",
+        "name": "jewelery",
+        "budget": 13
+    },
+    {
+        "department_id": "",
+        "name": "games",
+        "budget": 900000
+    },
+    {
+        "department_id": "",
+        "name": "garden",
+        "budget": 2
+    },
+    {
+        "department_id": "",
+        "name": "books",
+        "budget": -130000
+    },
+    {
+        "department_id": "",
+        "name": "industrial",
+        "budget": 145400000
+    },
+    {
+        "department_id": "",
+        "name": "sports",
+        "budget": 5000125
+    },
+    {
+        "department_id": "",
+        "name": "beauty",
+        "budget": 67
+    },
+    {
+        "department_id": "",
+        "name": "health",
+        "budget": 189956354
+    }
+]

@@ -6,7 +6,8 @@ const { generateOrders } = require('../data/faker/orders');
 const productTypes = require('../data/prod-types'); 
 const { generatePaymentTypes} = require('../data/faker/payment-types');
 const { generateTrainingPrograms } = require('../data/faker/trainingProg');
-const { generateComputers} = require('../data/faker/computers')
+const { generateComputers} = require('../data/faker/computers');
+const departments = require('../data/departments'); 
 
 
 
