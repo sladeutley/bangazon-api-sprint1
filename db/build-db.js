@@ -97,7 +97,6 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
   );
 //-------------------------CREATE EMPLOYEES DB---------------------
   db.run(`DROP TABLE IF EXISTS employees`);
-  console.log("emp-5");
   db.run(
     `CREATE TABLE IF NOT EXISTS employees (
     employee_id INTEGER PRIMARY KEY,
@@ -114,7 +113,6 @@ db.serialize(function () { //want db.serialize for pc users does each 'db.run' o
     FOREIGN KEY (dept_id) REFERENCES department(dept_id)
   )`,
     () => {
-      console.log("emp-6");      
       employeeData.forEach(
         ({
           employee_id,
