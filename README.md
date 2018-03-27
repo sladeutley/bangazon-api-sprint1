@@ -1,7 +1,5 @@
 # bangazon-api-sprint1
 
-# bangazon-api-sprint1
-
 ## H2 To Run
 
 NPM INSTALLS:
