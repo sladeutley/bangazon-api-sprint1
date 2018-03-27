@@ -6,7 +6,8 @@ const { generateOrders } = require('../data/faker/orders');
 const productTypes = require('../data/prod-types'); 
 const { generatePaymentTypes} = require('../data/faker/payment-types');
 const { generateTrainingPrograms } = require('../data/faker/trainingProg');
-const { generateComputers} = require('../data/faker/computers')
+const { generateComputers} = require('../data/faker/computers');
+const departments = require('../data/departments'); 
 const { generateOrderProducts } = require('../data/faker/order-prod');
 
 
@@ -31,6 +32,7 @@ orderStream.write(JSON.stringify(orders));
 let workers = generateEmployees();
 let employeeStream = createWriteStream(`./data/faker/employees.json`);
 employeeStream.write(JSON.stringify(workers));
+
 //create payment JSON
 let payments = generatePaymentTypes(customers.length);
 let paymentStream = createWriteStream(`./data/faker/payment-types.json`);
