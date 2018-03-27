@@ -13,6 +13,9 @@ const paymentTypeData = JSON.parse(
   readFileSync("./data/faker/payment-types.json")
 );
 const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
+const empTrainJoinData = JSON.parse(readFileSync("./data/faker/empTrain.json"));
+
+
 const departmentData = JSON.parse(readFileSync("./data/departments.json"));
 const orderProductsData = JSON.parse(
   readFileSync("./data/faker/orderProducts.json")
@@ -111,14 +114,13 @@ db.serialize(function() {
     `CREATE TABLE IF NOT EXISTS employees (
     employee_id INTEGER PRIMARY KEY,
     job_title TEXT,
-    supervisor TEXT,
     first_name TEXT,
     last_name TEXT,
     work_email TEXT,
     addressStreet TEXT,
     addressCity TEXT,
     addressState TEXT,
-    addressZip TEXT,
+    addressZip INTEGER,
     dept_id INTEGER,
     FOREIGN KEY (dept_id) REFERENCES department(dept_id)
   )`,
@@ -127,7 +129,6 @@ db.serialize(function() {
         ({
           employee_id,
           job_title,
-          supervisor,
           first_name,
           last_name,
           work_email,
@@ -140,14 +141,13 @@ db.serialize(function() {
           db.run(`INSERT INTO employees VALUES (
         null,
         "${job_title}",
-        "${supervisor}",
         "${first_name}",
         "${last_name}",
         "${work_email}",
         "${addressStreet}",
         "${addressCity}",
         "${addressState}",
-        "${addressZip}",
+        ${addressZip},
         ${dept_id}
       )`);
         }
@@ -256,9 +256,37 @@ db.serialize(function() {
               "${datePurchased}",
               "${dateReturned}"
           )`);
-      });
+        }
+      );
+      }
+    );
+  
+
+
+//------------EMPLOYEES || TRAINING   JOIN TABLE--------------
+
+  db.run(`CREATE TABLE IF NOT EXISTS employees_training (
+  employee_id INTEGER NOT NULL,
+  trainingProgram_id INTEGER NOT NULL,
+  PRIMARY KEY(employee_id, trainingProgram_id),
+  FOREIGN KEY(employee_id) REFERENCES employee(employee_id) ON DELETE CASCADE,
+  FOREIGN KEY(trainingProgram_id) REFERENCES trainingProgram(trainingProgram_id) ON DELETE CASCADE
+)`, () => {
+      // console.log('created EMP_TRAIN JOIN');
+      empTrainJoinData.forEach(
+        ({
+          employee_id,
+          trainingProgram_id
+        }) => {
+          db.run(`INSERT INTO employees_training VALUES (
+            "${employee_id}",
+            "${trainingProgram_id}"
+          )`);
+        }
+      )
     }
   );
+
 
   //---------------------CREATE DEPARTMENTS TABLE----------------------//
   db.run(`DROP TABLE IF EXISTS departments`);

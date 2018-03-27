@@ -6,7 +6,8 @@ const { generateOrders } = require('../data/faker/orders');
 const productTypes = require('../data/prod-types'); 
 const { generatePaymentTypes} = require('../data/faker/payment-types');
 const { generateTrainingPrograms } = require('../data/faker/trainingProg');
-const { generateComputers} = require('../data/faker/computers');
+const { generateComputers} = require('../data/faker/computers')
+const { createEmpTrainData } = require('../data/faker/emp_training.js');
 const departments = require('../data/departments'); 
 const { generateOrderProducts } = require('../data/faker/order-prod');
 
@@ -48,6 +49,10 @@ let computers = generateComputers();
 let compStream = createWriteStream(`./data/faker/computers.json`);
 compStream.write(JSON.stringify(computers));
 
+//------------Build Employee Join Table
+let empTrainJoin = createEmpTrainData();
+let empTrainStream = createWriteStream(`./data/faker/empTrain.json`);
+empTrainStream.write(JSON.stringify(empTrainJoin));
 //generating orderProducts
 let orderProducts = generateOrderProducts(orders.length, products.length );
 let orderProductsStream = createWriteStream('./data/faker/orderProducts.json')
