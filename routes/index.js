@@ -4,7 +4,7 @@
 const { Router } = require('express');
 const router = Router();
 
-router.use(require('./product-typesRoute.js'));
+router.use(require('./product-typesRoute'));
 router.use(require('./customers'));
 router.use(require('./orders'));
 router.use(require('./paymentTypes'));
