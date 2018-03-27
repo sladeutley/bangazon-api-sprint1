@@ -10,8 +10,7 @@ const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.jso
 const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
 const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
 const departmentData = JSON.parse(readFileSync("./data/departments.json"));
-
-
+const orderProductsData = JSON.parse(readFileSync("./data/faker/orderProducts.json"));
 
 db.serialize(function() {
   //want db.serialize for pc users does each 'db.run' one by one until each one is finished
@@ -276,6 +275,30 @@ db.serialize(function() {
         });
     });
 });
+//---------------CREATE ORDER/PRODUCTS TABLE -------------------//
+    db.run(`DROP TABLE IF EXISTS OrderProducts`);
+    db.run(
+      `CREATE TABLE IF NOT EXISTS OrderProducts (
+      order_product_id INTEGER PRIMARY KEY,
+      order_id INTEGER,
+      product_id INTEGER,
+      FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
+      FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
+      )`,
+      () => {
+        orderProductsData.forEach(
+          ({ order_id, product_id }) => {
+            db.run(`INSERT INTO orderProducts VALUES (
+            null,
+          ${order_id},
+          ${product_id}
+        )`);
+          }
+        );
+      }
+    );
+  });
+
 
 
 
