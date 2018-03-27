@@ -26,7 +26,8 @@ app.use((err, req, res, next) => {
   // one error handler to rule them all
   res.json({
     message: "Generic Error Message",
-    err: err.message
+    err: err.message,
+    status: err.status
   });
 });
 
