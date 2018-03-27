@@ -12,7 +12,7 @@ router.use(require('./products'));
 router.use(require('./trainingProgs'));
 router.use(require('./computers'));
 router.use(require('./employees'));
-
+router.use(require('./departmentsRoutes'));
 
 
 module.exports = router;
