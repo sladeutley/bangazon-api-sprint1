@@ -6,11 +6,17 @@ const custData = JSON.parse(readFileSync("./data/faker/customers.json"));
 const orderData = JSON.parse(readFileSync("./data/faker/orders.json"));
 const employeeData = JSON.parse(readFileSync("./data/faker/employees.json"));
 const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
-const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.json"));
-const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
+const trainingProgData = JSON.parse(
+  readFileSync("./data/faker/trainingProgs.json")
+);
+const paymentTypeData = JSON.parse(
+  readFileSync("./data/faker/payment-types.json")
+);
 const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
 const departmentData = JSON.parse(readFileSync("./data/departments.json"));
-const orderProductsData = JSON.parse(readFileSync("./data/faker/orderProducts.json"));
+const orderProductsData = JSON.parse(
+  readFileSync("./data/faker/orderProducts.json")
+);
 
 db.serialize(function() {
   //want db.serialize for pc users does each 'db.run' one by one until each one is finished
@@ -54,7 +60,7 @@ db.serialize(function() {
       );
     }
   );
-//-------------------------CREATE CUSTOMERS DB---------------------
+  //-------------------------CREATE CUSTOMERS DB---------------------
 
   db.run(`DROP TABLE IF EXISTS customers`);
   db.run(
@@ -99,7 +105,7 @@ db.serialize(function() {
       );
     }
   );
-//-------------------------CREATE EMPLOYEES DB---------------------
+  //-------------------------CREATE EMPLOYEES DB---------------------
   db.run(`DROP TABLE IF EXISTS employees`);
   db.run(
     `CREATE TABLE IF NOT EXISTS employees (
@@ -126,7 +132,7 @@ db.serialize(function() {
           last_name,
           work_email,
           addressStreet,
-          addressCity, 
+          addressCity,
           addressState,
           addressZip,
           dept_id
@@ -149,7 +155,7 @@ db.serialize(function() {
     }
   );
 
-//-------------------------CREATE ORDERS DB---------------------
+  //-------------------------CREATE ORDERS DB---------------------
 
   db.run(`DROP TABLE IF EXISTS orders`);
   db.run(
@@ -222,37 +228,37 @@ db.serialize(function() {
       progName TEXT,
       progStartDate TEXT,
       progEndDate TEXT
-    )`, 
+    )`,
     () => {
       trainingProgData.forEach(({ progName, progStartDate, progEndDate }) => {
-          db.run(`INSERT INTO trainingPrograms VALUES (
+        db.run(`INSERT INTO trainingPrograms VALUES (
             null,
             "${progName}",
             "${progStartDate}",
             "${progEndDate}"
           )`);
-        });
-    });
+      });
+    }
+  );
 
-    //---------------------CREATE COMPUTERS TABLE----------------------//
-    db.run(`DROP TABLE IF EXISTS computers`);
-    db.run(
-      `CREATE TABLE IF NOT EXISTS computers (
+  //---------------------CREATE COMPUTERS TABLE----------------------//
+  db.run(`DROP TABLE IF EXISTS computers`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS computers (
         comp_id INTEGER PRIMARY KEY,
         datePurchased TEXT,
         dateReturned TEXT
       )`,
-      () => {
-        compData.forEach(({ comp_id, datePurchased, dateReturned }) => {
-          db.run(`INSERT INTO computers VALUES (
+    () => {
+      compData.forEach(({ comp_id, datePurchased, dateReturned }) => {
+        db.run(`INSERT INTO computers VALUES (
               null,
               "${datePurchased}",
               "${dateReturned}"
           )`);
-        }
-      );
-      }
-    );
+      });
+    }
+  );
 
   //---------------------CREATE DEPARTMENTS TABLE----------------------//
   db.run(`DROP TABLE IF EXISTS departments`);
@@ -262,44 +268,37 @@ db.serialize(function() {
       name TEXT,
       supervisor INTEGER,
       budget INTEGER
-    )`, 
+    )`,
     () => {
-      departmentData.forEach( 
-        ({ department_id, name,supervisor, budget }) => {
-          db.run(`INSERT INTO departments VALUES (
+      departmentData.forEach(({ department_id, name, supervisor, budget }) => {
+        db.run(`INSERT INTO departments VALUES (
             null,
             "${name}",
             "${supervisor}",
             "${budget}"
           )`);
-        });
-    });
-});
-//---------------CREATE ORDER/PRODUCTS TABLE -------------------//
-    db.run(`DROP TABLE IF EXISTS OrderProducts`);
-    db.run(
-      `CREATE TABLE IF NOT EXISTS OrderProducts (
+      });
+    }
+  );
+
+  //---------------CREATE ORDER/PRODUCTS TABLE -------------------//
+  db.run(`DROP TABLE IF EXISTS OrderProducts`);
+  db.run(
+    `CREATE TABLE IF NOT EXISTS OrderProducts (
       order_product_id INTEGER PRIMARY KEY,
       order_id INTEGER,
       product_id INTEGER,
       FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
       FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
       )`,
-      () => {
-        orderProductsData.forEach(
-          ({ order_id, product_id }) => {
-            db.run(`INSERT INTO orderProducts VALUES (
+    () => {
+      orderProductsData.forEach(({ order_id, product_id }) => {
+        db.run(`INSERT INTO orderProducts VALUES (
             null,
           ${order_id},
           ${product_id}
         )`);
-          }
-        );
-      }
-    );
-  });
-
-
-
-
-
+      });
+    }
+  );
+});
