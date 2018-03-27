@@ -1,6 +1,6 @@
 'use strict';
-const { getAll } = require('../models/Customer');
-const { getOne } = require('../models/Customer');
+const { getAll } = require('../models/Employee');
+const { getOne } = require('../models/Employee');
 const { addOneEmployee, editEmployee } = require('../models/Employee');
 
 module.exports.getAllEmployees = (req, res, next) => {
@@ -13,7 +13,7 @@ module.exports.getAllEmployees = (req, res, next) => {
 
 module.exports.getOneEmployee = (req, res, next) => {
     let empId= req.params.empId;
-    getOne(emp)
+    getOne(empId)
     .then( (emp) => {
       res.status(200).json(emp);
     })

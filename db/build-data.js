@@ -8,7 +8,6 @@ const { generatePaymentTypes} = require('../data/faker/payment-types');
 const { generateTrainingPrograms } = require('../data/faker/trainingProg');
 const { generateComputers} = require('../data/faker/computers')
 const { createEmpTrainData } = require('../data/faker/emp_training.js');
-const { generateComputers} = require('../data/faker/computers');
 const departments = require('../data/departments'); 
 const { generateOrderProducts } = require('../data/faker/order-prod');
 

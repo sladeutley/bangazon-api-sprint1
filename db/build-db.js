@@ -9,14 +9,11 @@ const prodTypeData = JSON.parse(readFileSync("./data/prod-types.json"));
 const trainingProgData = JSON.parse(readFileSync("./data/faker/trainingProgs.json"));
 const paymentTypeData = JSON.parse(readFileSync("./data/faker/payment-types.json"));
 const compData = JSON.parse(readFileSync("./data/faker/computers.json"));
-<<<<<<< HEAD
 const empTrainJoinData = JSON.parse(readFileSync("./data/faker/empTrain.json"));
 
 
-=======
 const departmentData = JSON.parse(readFileSync("./data/departments.json"));
 const orderProductsData = JSON.parse(readFileSync("./data/faker/orderProducts.json"));
->>>>>>> master
 
 db.serialize(function() {
   //want db.serialize for pc users does each 'db.run' one by one until each one is finished
@@ -138,7 +135,6 @@ db.serialize(function() {
           db.run(`INSERT INTO employees VALUES (
         null,
         "${job_title}",
-        "${supervisor}",
         "${first_name}",
         "${last_name}",
         "${work_email}",
@@ -257,37 +253,34 @@ db.serialize(function() {
       );
       }
     );
-<<<<<<< HEAD
   
 
-//-------------------------JOIN TABLES---------------------
 
-//------------EMPLOYEES || TRAINING--------------
+//------------EMPLOYEES || TRAINING   JOIN TABLE--------------
 
   db.run(`CREATE TABLE IF NOT EXISTS employees_training (
   employee_id INTEGER NOT NULL,
   trainingProgram_id INTEGER NOT NULL,
   PRIMARY KEY(employee_id, trainingProgram_id),
-  FOREIGN KEY(employee_id) REFERENCES employees(id) ON DELETE CASCADE,
-  FOREIGN KEY(trainingProgram_id) REFERENCES trainingPrograms(id) ON DELETE CASCADE
+  FOREIGN KEY(employee_id) REFERENCES employee(employee_id) ON DELETE CASCADE,
+  FOREIGN KEY(trainingProgram_id) REFERENCES trainingProgram(trainingProgram_id) ON DELETE CASCADE
 )`, () => {
-      console.log('created EMP_TRAIN JOIN');
+      // console.log('created EMP_TRAIN JOIN');
       empTrainJoinData.forEach(
         ({
           employee_id,
           trainingProgram_id
         }) => {
           db.run(`INSERT INTO employees_training VALUES (
-            ${employee_id},
-            ${trainingProgram_id}
+            "${employee_id}",
+            "${trainingProgram_id}"
           )`);
         }
       )
     }
   );
-});
 
-=======
+
 
   //---------------------CREATE DEPARTMENTS TABLE----------------------//
   db.run(`DROP TABLE IF EXISTS departments`);
@@ -309,7 +302,7 @@ db.serialize(function() {
           )`);
         });
     });
-});
+
 //---------------CREATE ORDER/PRODUCTS TABLE -------------------//
     db.run(`DROP TABLE IF EXISTS OrderProducts`);
     db.run(
@@ -333,7 +326,6 @@ db.serialize(function() {
       }
     );
   });
->>>>>>> master
 
 
 

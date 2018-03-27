@@ -11,7 +11,7 @@ module.exports.getAll = () => {
 	});
 };
 
-module.exports.getOne = (emp) => {
+module.exports.getOne = (empId) => {
 	return new Promise((resolve, reject) => {
 		db.all(`SELECT * FROM employees WHERE employee_id = ${empId}`,
 			(err, emp) => {
@@ -24,7 +24,7 @@ module.exports.getOne = (emp) => {
 //POST Customers
 module.exports.addOneEmployee = ({
     job_title,
-    first_name,
+	first_name,
 	last_name,
 	work_email,
 	addressStreet,
@@ -49,7 +49,7 @@ module.exports.addOneEmployee = ({
 
 module.exports.editEmployee = (empId, {
     job_title,
-    first_name,
+	first_name,
 	last_name,
 	work_email,
 	addressStreet,
