@@ -17,13 +17,13 @@ app.use("/api/v1", routes);
 
 app.use((req, res, next) => {
   let err = new Error("Resource Not Found");
+  console.log("404 handler");
   err.status = 404;
   next(err);
 });
 
 app.use((err, req, res, next) => {
   // one error handler to rule them all
-  if (err.status) console.log("404 handler");
   res.json({
     message: "Generic Error Message",
     err: err.message,
